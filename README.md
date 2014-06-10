@@ -2,6 +2,7 @@ MCCCSMWA
 ========
 
 MCC Career Services Mobile Web Application
+
 Welcome to the MCCCSMWA Home Documentation Page
 
 The MCC Career Services Mobile Web Application is a project conceptualized by Art Brown and co-developed by the following faculty and student development team:
