@@ -22,17 +22,17 @@ function personalityType($hollandCode)
 function personalityTypeDescription($hollandCode)
 {
 	if ($hollandCode === 'r') {
-		$personTypeDescription = 'People have athletic ability, prefer to work with objects, machines, tools, plants or animals, or to be outdoors.';
+		$personTypeDescription = 'Realistic people have athletic ability; prefer to work with objects, machines, tools, plants or animals; or enjoy being outdoors.';
 	} elseif ($hollandCode === 'a') {
-		$personTypeDescription = 'People have artistic, innovating, or intuitional abilities and like to work in unstructured situations using their imagination and creativity.';
+		$personTypeDescription = 'Artistic people have artistic, innovating, or intuitional abilities and like to work in unstructured situations using their imagination and creativity.';
 	} elseif ($hollandCode === 's') {
-		$personTypeDescription = 'People like to work with people to enlighten, inform, help, train, or cure them, or are skilled with words';	
+		$personTypeDescription = 'Social people like to work with people to enlighten, inform, help, train, or cure them; or they are skilled with words.';	
 	} elseif ($hollandCode === 'c') {
-		$personTypeDescription = 'People like to work with data, have clerical or numerical ability, carry out tasks in detail, or follow through on others\' instructions.';	
+		$personTypeDescription = 'Conventional people like to work with data, have clerical or numerical ability, carry out tasks in detail, or follow through on others\' instructions.';	
 	} elseif ($hollandCode === 'i') {
-		$personTypeDescription = 'People like to observe, learn, investigate, analyze, evaluate, or solve problems.';	
+		$personTypeDescription = 'Investigative people like to observe, learn, investigate, analyze, evaluate, or solve problems.';	
 	} elseif ($hollandCode === 'e') {
-		$personTypeDescription = 'People like to work with people, influencing, persuading, leading or managing for organizational goals or economic gain.';		
+		$personTypeDescription = 'Enterprising people like to work with people, influencing, persuading, leading or managing for organizational goals or economic gain.';		
 	} else {
 		$personTypeDescription = 'Unknown personality type description.';
 	}

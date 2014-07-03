@@ -180,11 +180,11 @@ $_SESSION['_assessComplete'] = "true";
 				$statement->execute();
 				?>
         </div>
-			<a class="button" href="careers_majors.php?t1=<?php echo $types[0]; ?>&amp;t2=<?php echo $types[1]; ?>&amp;t3=<?php echo $types[2]; ?>&amp;pt=<?php echo $types[$i]; ?>">See Careers and Majors</a>	<br><br>
+			<a class="button" href="careers_majors.php?t1=<?php echo $types[0]; ?>&amp;t2=<?php echo $types[1]; ?>&amp;t3=<?php echo $types[2]; ?>&amp;pt=<?php echo $types[$i]; ?>" data-role="button" data-inline="true" >See Careers and Majors</a>	<br><br>
 			<!--<a class="button" href="index.php">Home Page</a>-->	
 			<h3>Assessment Results Don't Seem to Fit You?</h3>
 			<h4>Try the Assessment Again with a New Set of Questions</h4>				
-			<a class="button" href="assessment.php">Retake the Assessment Now</a>			
+			<a class="button" href="assessment.php" data-role="button" data-inline="true" >Retake the Assessment</a>
 	</div><!--closing content div-->
 	
 	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     

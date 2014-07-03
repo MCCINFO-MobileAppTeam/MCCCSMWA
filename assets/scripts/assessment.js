@@ -71,6 +71,7 @@ $(function () {
 	    'get_questions.php',
         function (data) {
             questions = data;
+			setTimeout(addAssessment, 1000);
             addAssessment();
         }
     );

@@ -214,7 +214,7 @@ session_start();
 			A Career Navigator will contact you within two business days.</h1>
 			<div><br>
 				<!--<h3>Take Charge of Your Future</h3>-->
-				<a class="button" href="next_steps.php">Return to Next Steps</a>
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Return to Next Steps</a>
 			</div>						
 	<?php
 		}

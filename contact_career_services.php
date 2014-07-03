@@ -29,11 +29,11 @@ require_once 'includes/page_start.php';
                     <div class="option">
 						<a href="tel:4022506143" class="mobile_tel" data-role="button" data-icon="phone">Call (402) 738-4647</a>
                     </div>
-                    <!--<div class="option">
-                        <a href="email_mcc.php" data-role="button" data-icon="mail">Send Questions</a>
-                    </div> -->
                     <div class="option">
-						<a href="campus_maps.php" data-role="button" data-icon="location" rel="external">View MCC Campus Maps</a>
+						<a href="career_services_locations.php" data-role="button" data-icon="location" rel="external">Our Locations</a>
+                    </div>					
+                    <div class="option">
+						<a href="campus_maps.php" data-role="button" data-icon="location" rel="external">Campus Maps</a>
                     </div>
 
                 </div>

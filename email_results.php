@@ -179,7 +179,7 @@ require_once 'includes/functions.php';
 			Check your email for your assessment results.</h3>
 			<div>
 				<!--<h3>Take Charge of Your Future</h3>-->
-				<a class="button" href="next_steps.php">Return to Next Steps</a>
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Return to Next Steps</a>
 			</div>						
 	<?php
 		}
