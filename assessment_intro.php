@@ -27,15 +27,15 @@ require_once 'includes/page_start.php';
         <h2>Identify Your Interests</h2>
         <p class="intro">MCC Career Services provides a scientifically validated self-assessment tool.<br><br>
         Learn how your personality matches to career options and MCC programs.</p>
-        <h2>Tips for Taking the Assessment</h2>
-		<p class="intro">Be honest with yourself<br>
-        Go with your first thought<br>
-        Relax and have fun<br>
+        <h2>Tips for taking the assessment</h2>
+		<p class="intro">Be honest with yourself.<br>
+        Go with your first thought.<br>
+        Relax and have fun.<br>
         </p>		
 					
 		<ul data-role="listview">
-			<li data-icon="action" data-iconshadow="true"><a href="assessment.php">Take the Assessment Now</a></li>
-            <li data-icon="video"><a href="video_cs_intro.php">Watch Our Assessment Video</a></li>
+			<li data-icon="action" data-iconshadow="true"><a href="assessment.php">Take the assessment now</a></li>
+            <li data-icon="video"><a href="video_cs_intro.php">Watch our assessment video</a></li>
 		</ul>		
 	</div><!--closing content div-->
 	

@@ -25,14 +25,14 @@ require_once 'includes/page_start.php';
 	
 	<div data-role="content"><!-- opening content div-->
                 <h2>Our Mission</h2>	
-                    <p>The Mission of Career Services at Metropolitan Community College is to foster collaborative relationships with both internal and external partners, to facilitate the development of responsible career decision-making skills and to provide comprehensive career development.</p>
+                    <p>The mission of Career Services at Metropolitan Community College is to foster collaborative relationships with both internal and external partners, to facilitate the development of responsible career decision-making skills and to provide comprehensive career development.</p>
 					<br>
 				<h2>Career Services Offers</h2>
-					<p>Career Assessment and Exploration<br>
-					NEworks Registration Assistance<br>
-					Interview Prep Assistance<br>
-					Job and Internship Strategies<br>
-					Resume and Cover Letter Assistance/Critique</p>
+					<p>Career assessment and exploration<br>
+					NEworks registration assistance<br>
+					Interview prep assistance<br>
+					Job and internship strategies<br>
+					Résumé and cover letter assistance/critique</p>
 					<br>
                 <h2>Get to Know Us Better</h2>				
                 <iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>					

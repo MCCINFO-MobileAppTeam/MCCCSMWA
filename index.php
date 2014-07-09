@@ -29,11 +29,11 @@ $_SESSION['_quesSet'] = 1;
 	<div data-role="content"><!-- opening content div-->
 	    <p class="indexintro">Match yourself to career opportunities and MCC majors.</p>
 		<ul data-role="listview">
-			<li data-icon="eye" data-iconshadow="true"><a href="assessment_intro.php">Identify Your Career Interests</a></li>			
-            <li data-icon="info" data-iconshadow="true"><a href="career_services_information.php">Discover Career Services</a></li>
-			<li data-icon="action" data-iconshadow="true"><a href="contact_career_services.php">Contact Career Services</a></li>
-            <li data-icon="search" data-iconshadow="true"><a href="https://www.mccneb.edu/future/get_content.asp?url=/careercenter/career_cluster/" rel="external">Explore MCC Programs</a></li>	
-            <li data-icon="video" data-iconshadow="true"><a href="neworks.php">Checkout NEworks</a></li>			
+			<li data-icon="eye" data-iconshadow="true"><a href="assessment_intro.php">Discover your passion</a></li>
+			<li data-icon="search" data-iconshadow="true"><a href="https://www.mccneb.edu/future/get_content.asp?url=/careercenter/career_cluster/" rel="external">Engage in education</a></li>
+            <li data-icon="video" data-iconshadow="true"><a href="neworks.php">Navigate your career</a></li>
+			<li data-icon="info" data-iconshadow="true"><a href="career_services_information.php">Explore MCC</a></li>
+			<li data-icon="action" data-iconshadow="true"><a href="contact_career_services.php">Contact MCC</a></li>			
 		</ul>		
 	</div><!--closing content div-->
 	
