@@ -25,7 +25,7 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->			
-                <h1>MCC Campus Maps</h1>
+                <h3>MCC Campus Maps</h3>
 				<div id="map" style="width: 300px; height: 300px;"></div>
 				
 						<script type="text/javascript">
@@ -87,12 +87,9 @@ require_once 'includes/page_start.php';
 	
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>    
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

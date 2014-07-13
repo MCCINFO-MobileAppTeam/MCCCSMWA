@@ -1,11 +1,12 @@
 <?php
 require_once 'includes/page_start.php';
+require_once 'includes/functions.php';
 ?>
 <!DOCTYPE html> 
 <html>
-<head>
+	<head>
 	<meta charset="utf-8">
-	<title>MCCCS Information</title>
+	<title>MCCCS Contact Info</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 	<link rel="stylesheet" href="assets/css/mcccsmwa.css">
@@ -14,7 +15,7 @@ require_once 'includes/page_start.php';
 </head> 
 <body> 
 
-<!-- MCCCS Information Page -->
+<!-- MCCCS Contact Info Page -->
 <div data-role="page" data-content-theme="a" id="csmwa">
 	
 	<div data-role="header" id="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -24,39 +25,36 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-                <h3>Career Services Locations</h3>	
-					<br>
+	            <h2>Contact Us</h2><p>We are here for you!</p>
+                <div class="options">
+                    <div class="option">
+						<a href="tel:4022506143" class="mobile_tel" data-role="button" data-icon="phone">Call (402) 738-4647</a>
+                    </div>
+                    <div class="option">
+						<a href="career_services_locations.php" data-role="button" data-icon="location" rel="external">Our Locations</a>
+                    </div>					
+                    <div class="option">
+						<a href="campus_maps.php" data-role="button" data-icon="location" rel="external">Campus Maps</a>
+                    </div>
 
-	<div data-role="collapsible-set">
+                </div>
+				<script>
+					if (screen.width <= 500) {
+						$('.mobile_tel').each(function() {
+							$(this).wrap("<a href='tel:4028506170'/>");
+						});
+					}
+				</script>
+	
+	</div><!--closing content div-->
 
-		<div data-role="collapsible">
-		<h3>South Omaha Campus</h3>
-		<p>27th and Q Street<br>Connector Building 148<br>Career Navigator:  Jill Rathje<br>Mon. 10am-3pm<br>Fri. 10am-2pm<br>Career Navigator:  Monki Cannon<br>Tues. & Thurs. 10am-3pm</p>
-		</div>
-
-		<div data-role="collapsible">
-		<h3>MCC Express</h3>
-		<p>24th & Vinton Street<br>Career Navigator:  Moniki Cannon<br>Weds. 10am-3pm</p>
-		</div>		
-
-		<div data-role="collapsible">
-		<h3>Fort Omaha Campus</h3>
-		<p>30th and Fort Street<br>Building 10<br>Career Navigator:  Angela McGraw<br>Mon. & Tues. 8:30am-12:30pm<br>Thurs. & Fri. 8:30am-12:30pm<br>Building 10<br>Weds. 8:30am-12:30pm</p>
-		</div>
-
-		<div data-role="collapsible">
-		<h3>Elkorn Valley Campus</h3>
-		<p>204th & Dodge Street<br>Career Navigator:  Jill Rathje<br>Weds. & Thurs 10am-3pm</p>
-		</div>	
-		
-	</div>
-
-					
-</div><!--closing content div-->
+<?php	
+	writeLogMessage($pdo,$_SESSION['visit_num'], 'This is a test message');
+?>  			
 	
 <?php
 include ('includes/footer.php');
-?> 
+?>  
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

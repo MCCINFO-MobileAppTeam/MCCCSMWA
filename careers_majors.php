@@ -57,9 +57,9 @@ require_once 'includes/page_start.php';
 		$primaryType = 'r';
 	}
 	?>
-		<h1>Careers / Majors</h1>
+		<h3>Careers & MCC Majors</h3>
 		<div>
-			<h3>Ready For Your Future?</h3>
+			<h4>Ready For Your Future?</h4>
 		</div>
 							
 	<?php for ($i = 0; $i < 3; $i += 1) { ?>	
@@ -96,17 +96,14 @@ require_once 'includes/page_start.php';
 
 			<div>
 				<!--<h3>Ready For Your Future?</h3>-->
-				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next Steps</a>
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
 			</div>
 					   
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>   
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

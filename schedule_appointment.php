@@ -32,7 +32,7 @@ session_start();
 			$lastName = $_SESSION['_lastName'];
 			$email = $_SESSION['_email'];
 			$phone = $_SESSION['_phone']; ?>
-					<h1>Request An Appointment With Career Services</h1>
+					<h3>Request an Appointment with a Career Navigator</h3>
 					<form data-ajax="false" method="POST" id="appointment_form">
 						<!--<div class="form-field"> old wrapper class="form-field"-->
                         <div data-role="fieldcontain">
@@ -206,15 +206,46 @@ session_start();
 				"Please do not reply to this message directly.\n\n";
 			$fromEmail = 'CCC@MCC.net';
 			$subject = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
-			$email_to = "skip123paschall@gmail.com"; 
-			/* $email_to = "rhschuman@gmail.com"; */
+			$email_to = "mcccsmwa@gmail.com"; 
 			mail($email_to, $subject, $message, $fromEmail);
+			
+			$status = 'requested';
+
+try {				
+			$query = 'INSERT INTO appt_request(visit_num, first_name, last_name, email_addr, type_1, type_2, type_3, mcc_status, contact_method, phone, mtg_days, mtg_time, mtg_location, status) ' .
+				'VALUES(:visit_num, :first_name, :last_name, :email_addr, :type_1, :type_2, :type_3, :mcc_status, :contact_method, :phone, :mtg_days, :mtg_time, :mtg_location, :status)';
+			$statement = $pdo->prepare($query);
+			$statement->bindParam(':visit_num', $_SESSION['visit_num'], PDO::PARAM_STR);
+			$statement->bindParam(':first_name', $firstName, PDO::PARAM_STR);
+			$statement->bindParam(':last_name', $lastName, PDO::PARAM_STR);
+			$statement->bindParam(':email_addr', $email, PDO::PARAM_STR);	
+			$statement->bindParam(':type_1', $type1, PDO::PARAM_STR);	
+			$statement->bindParam(':type_2', $type2, PDO::PARAM_STR);	
+			$statement->bindParam(':type_3', $type3, PDO::PARAM_STR);
+			$statement->bindParam(':mcc_status', $mccStatus, PDO::PARAM_STR);
+			$statement->bindParam(':contact_method', $contactMethod, PDO::PARAM_STR);	
+			$statement->bindParam(':phone', $phone, PDO::PARAM_STR);				
+			$statement->bindParam(':mtg_days', $days, PDO::PARAM_STR);	
+			$statement->bindParam(':mtg_time', $time, PDO::PARAM_STR);
+			$statement->bindParam(':mtg_location', $location, PDO::PARAM_STR);	
+			$statement->bindParam(':status', $status, PDO::PARAM_STR);				
+			$statement->execute();				
+}	
+catch(PDOException $e)
+{
+	writeLogMessage($pdo,$_SESSION['visit_num'], $e->getMessage());	
+	/* Redirect browser to the home page of the app*/
+	//header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
+	/* Make sure that code below does not get executed when we redirect. */
+	//exit;	
+}
+			
 	?>
-			<h1>Thank you for requesting to meet with Career Services.<br>
-			A Career Navigator will contact you within two business days.</h1>
+			<h3>Thank you for requesting to meet with Career Services.<br>
+			A Career Navigator will contact you within two business days.</h3>
 			<div><br>
 				<!--<h3>Take Charge of Your Future</h3>-->
-				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Return to Next Steps</a>
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
 			</div>						
 	<?php
 		}
@@ -231,12 +262,9 @@ session_start();
 	
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>  
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

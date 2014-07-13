@@ -24,27 +24,26 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-        <h2>Identify Your Interests</h2>
-        <p class="intro">MCC Career Services provides a scientifically validated self-assessment tool.<br><br>
-        Learn how your personality matches to career options and MCC programs.</p>
-        <h2>Tips for Taking the Assessment</h2>
-		<p class="intro">Be honest with yourself<br>
-        Go with your first thought<br>
-        Relax and have fun<br>
-        </p>		
+        <h3>Identify Your Interests</h3>
+        <p class="intro">Take our assessment to learn how your personality matches to careers and MCC programs.<br><br>
+		Be honest with yourself.<br>
+		Go with your first thought.<br>
+		Relax and have fun.</p>
+		
+		<!--<p class="intro">Be honest with yourself.<br>
+        Go with your first thought.<br>
+        Relax and have fun.<br>
+        </p>-->		
 					
 		<ul data-role="listview">
-			<li data-icon="action" data-iconshadow="true"><a href="assessment.php">Take the Assessment Now</a></li>
-            <li data-icon="video"><a href="video_cs_intro.php">Watch Our Assessment Video</a></li>
+			<li data-icon="action" data-iconshadow="true"><a href="assessment.php">Take the assessment now</a></li>
+            <li data-icon="video"><a href="video_cs_intro.php">Watch our assessment video</a></li>
 		</ul>		
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>  
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

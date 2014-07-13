@@ -1,6 +1,24 @@
 <?php
+
+$startOfPageVisitNum = 0;
+session_start();
+if (isset($_SESSION['visit_num'])) {
+	$startOfPageVisitNum = $_SESSION['visit_num'];
+}else{
+	$startOfPageVisitNum = 0;
+
+/* Redirect browser */
+header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/index.php");
+ 
+/* Make sure that code below does not get executed when we redirect. */
+exit;
+}
+
 require_once 'includes/page_start.php';
 require_once 'includes/functions.php';
+
+writeLogMessage($pdo,$_SESSION['visit_num'], 'Start of page visit_num = ' . strval($startOfPageVisitNum));
+
 ?>
 <!DOCTYPE html> 
 <html>
@@ -48,9 +66,9 @@ require_once 'includes/functions.php';
 	
 	</div><!--closing content div-->
 
-<?php
-writeLogMessage($pdo,$_SESSION['visit_num'], 'This is a test message');
-?>
+<?php	
+	writeLogMessage($pdo,$_SESSION['visit_num'], 'This is a test message');
+?> 
 	
 <?php
 include ('includes/footer.php');

@@ -24,23 +24,20 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-                <h2>Our Partnership with NEworks</h2>	
-                    <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize their NEworks job site.</p>
+                <h3>Our Partnership <br>with NEworks</h3>	
+                    <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize the NEworks job site.</p>
 					<br>
 					
-				<h2>NEworks can benefit your career planning</h2>
-					<p>Current MCC students and alumni use the keyword search Recruit MCC to view open positions. <br>
-					<p>Employers interested in filling their positions with MCC talent use the Recruit MCC in their postings.<br>
+				<h3>NEworks can benefit <br>your career planning</h3>
+					<p>Current MCC students and alumni use the keyword search <strong>Recruit MCC</strong> to view open positions. <br>
+					<p>Employers interested in filling positions with MCC talent use <strong>Recruit MCC</strong> in their postings.<br>
 					<br>
                 <h2><a href="https://neworks.nebraska.gov/vosnet/Default.aspx" rel="external" data-role="button" data-inline="true" >Visit NEworks</a></h2>				
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>    
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->
