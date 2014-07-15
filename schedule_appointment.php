@@ -178,8 +178,8 @@ session_start();
 		} else { 
 			$days = 'None Specified';
 		}
-		if (isset($_POST['contact_location'])) {
-			$location = $_POST['contact_location'];
+		if (isset($_POST['campus_select'])) {
+			$location = $_POST['campus_select'];
 		} else {
 			$location = 'None Specified';
 		}    
