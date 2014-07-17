@@ -52,7 +52,11 @@ require_once 'includes/functions.php';
 	<div data-role="content"><!-- opening content div-->
 
 	<?php if ($_SERVER['REQUEST_METHOD'] !== 'POST') { ?>
+<<<<<<< HEAD
 			<h3>Please share your feedback to help us improve our app.</h3>
+=======
+			<h1>Please give us your feedback to help improve user experience.</h1>
+>>>>>>> origin/master
 			<form data-ajax="false" method="POST">	
 				<div data-role="fieldcontain">	
 					<fieldset data-role="controlgroup"> 
@@ -136,6 +140,7 @@ require_once 'includes/functions.php';
 			"Please do not reply to this message directly.\n\n";
 		$fromEmail = 'CCC@MCC.net';
 		$subject = "Feedback sent from MCC Career Services App: ";
+<<<<<<< HEAD
 		$email_to = "mcccsmwa@gmail.com";
 		mail($email_to, $subject, $message, $fromEmail);
 	?>
@@ -154,3 +159,26 @@ include ('includes/footer.php');
 </div><!-- closing page div -->
 </body><!-- closing body div -->
 </html><!-- closing html div -->
+=======
+		/* $email_to = "skip123paschall@gmail.com"; */
+		$email_to = "rhschuman@gmail.com";
+		mail($email_to, $subject, $message, $fromEmail);
+	?>
+						<h3>Thank you for taking the time to give us your feedback.</h3>
+						<div>
+							<a class="button" href="index.php">Return to Home Page</a>
+						</div>										
+	<?php
+	} ?>		
+	</div><!--closing content div-->
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
+		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
+			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
+			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
+			</p>
+	</div><!-- footer closing div -->   
+	
+</div><!-- closing page div -->
+</body><!-- closing body div -->
+</html><!-- closing html div -->
+>>>>>>> origin/master

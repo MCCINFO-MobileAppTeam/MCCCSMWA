@@ -24,11 +24,19 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
+<<<<<<< HEAD
                 <h3>Our Partnership <br>with NEworks</h3>	
                     <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize the NEworks job site.</p>
 					<br>
 					
 				<h3>NEworks can benefit <br>your career planning</h3>
+=======
+                <h2>Our Partnership with NEworks</h2>	
+                    <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize the NEworks job site.</p>
+					<br>
+					
+				<h2>NEworks can benefit your career planning</h2>
+>>>>>>> origin/master
 					<p>Current MCC students and alumni use the keyword search <strong>Recruit MCC</strong> to view open positions. <br>
 					<p>Employers interested in filling positions with MCC talent use <strong>Recruit MCC</strong> in their postings.<br>
 					<br>
