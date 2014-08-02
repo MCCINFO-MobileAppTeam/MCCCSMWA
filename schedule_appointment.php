@@ -13,6 +13,45 @@ session_start();
 	<link rel="stylesheet" href="assets/css/mcccsmwa.css">
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script>
+	  $(document).ready(function(){ 
+	    $("input[name='mcc_status']").change(function(){
+	      if( this.id != 'radio_never' ){
+		    if( $('#f_name').is(':hidden') ){
+              $('#f_name').show(); 
+	          $('#l_name').show();
+		      $('#con_method').show();
+	   	      $('#email').show(); 
+	          $('#phone').show();
+		      $('#time').show();
+		   	  $('#days').show();
+			  $('#submit_btn').show();
+			  $('#campus').show();
+			  $('#heading').show(); 
+			}
+		  }
+	      if( this.id === 'radio_current' ){
+            $("#current").popup('open');
+          }else if( this.id === 'radio_alumni' ){
+            $("#alumni").popup('open');     
+          }else if( this.id === 'radio_prospective' ){
+            $("#prospective").popup('open');
+		  }else if( this.id === 'radio_never' ){
+            $("#never").popup('open');
+			$('#f_name').hide(); 
+			  $('#l_name').hide();
+		      $('#con_method').hide();
+			  $('#email').hide(); 
+			  $('#phone').hide();
+		      $('#time').hide();
+			  $('#days').hide();
+			  $('#submit_btn').hide();
+			  $('#campus').hide();
+			  $('#heading').hide();
+		  }
+        }); 
+	  });
+	</script>
 </head> 
 <body> 
 
@@ -32,29 +71,49 @@ session_start();
 			$lastName = $_SESSION['_lastName'];
 			$email = $_SESSION['_email'];
 			$phone = $_SESSION['_phone']; ?>
-					<h3>Request an Appointment with a Career Navigator</h3>
-					<form data-ajax="false" method="POST" id="appointment_form">
+					<h3 id="heading">Request an Appointment with a Career Navigator</h3>
+					<form class="validate" data-ajax="false" method="POST" id="appointment_form" name="appointment_form">
 						<!--<div class="form-field"> old wrapper class="form-field"-->
-                        <div data-role="fieldcontain">
+												
+						<!--popups for MCC Status-->
+						<div data-role="popup" id="current" class="ui-content">
+							<p>Great! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
+						</div>
+						<div data-role="popup" id="alumni" class="ui-content">
+							<p>Welcome Back! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
+						</div>
+						<div data-role="popup" id="prospective" class="ui-content">
+							<p>Welcome to MCC! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
+						</div>
+						<div data-role="popup" id="never" class="ui-content">
+							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Nebraska Department of Labor Omaha Career Center at <a href="tel:4025953000">402-595-3000</a> for additional assistance.</p>
+						</div>
+						<div class="ui-field-contain" id="status">	
+							<fieldset data-role="controlgroup"> 
+								<legend>Please Selelct One</legend> 											
+									<label for="radio_current">I am a <b>CURRENT</b> student.</label> 	 
+									<input type="radio" name="mcc_status" id="radio_current" value="a current MCC student." required>	
+									<label for="radio_alumni">I am an <b>ALUMNI/GRADUATE</b> of MCC</label> 			
+									<input  type="radio" name="mcc_status" id="radio_alumni" value="an MCC alumni.">
+									<label for="radio_prospective">I am a <b>PROSPECTIVE</b> student and will enroll this upcoming quarter.</label> 			
+									<input  type="radio" name="mcc_status" id="radio_prospective" value="a prospective student at MCC.">
+									<label for="radio_never">I am not interested in MCC, but would like information on exploring new careers.</label> 			
+									<input  type="radio" name="mcc_status" id="radio_never" value="not interested in MCC">
+							</fieldset>
+						</div>
+						<!--<div id="hwd_link">
+							<br><br><a href="http://www.hws-ne.org/for-workers/career-center/">Heartland Workforce Development</a><br><br>
+							<a href="tel:4027384060">Call: 402-738-4060</a>
+						</div-->
+						<div class="ui-field-contain" id="f_name">
                             <label for="first_name">First Name</label>
                             <input maxlength="50" name="first_name" id="first_name" type="text" value="<?php echo $firstName ?>" required>
                         </div>                        
-						<div data-role="fieldcontain">
+						<div class="ui-field-contain" id="l_name">
                             <label for="last_name">Last Name</label>
                             <input maxlength="50" name="last_name" type="text" value="<?php echo $lastName ?>" required>
                         </div>
-						<div data-role="fieldcontain">	
-							<fieldset data-role="controlgroup"> 
-								<legend>Please Selelct One</legend> 											
-									<label for="radio_current">I am a current MCC student.</label> 	 
-									<input  type="radio" name="mcc_status" id="radio_current" value="Current MCC student" required>					
-									<label for="radio_alumni">I have taken classes in the past or have graduated from MCC</label> 			
-									<input  type="radio" name="mcc_status" id="radio_alumni" value="Alumni">
-									<label for="radio_never">I have never taken classes at MCC.</label> 			
-									<input  type="radio" name="mcc_status" id="radio_never" value="Never taken classes at MCC">
-							</fieldset>
-						</div>
-						<div data-role="fieldcontain">	
+						<div class="ui-field-contain" id="con_method">	
 							<fieldset data-role="controlgroup" data-type="horizontal"> 
 								<legend>Preferred contact method</legend> 											
 									<label for="radio_email">Email Me</label> 	 
@@ -63,29 +122,27 @@ session_start();
 									<input  type="radio" name="contact_method" id="radio_phone" value="Phone">
 							</fieldset>
 						</div>
-                        <div data-role="fieldcontain">
+                        <div class="ui-field-contain" id="email">
                             <label for="email">Email Address</label>
-                            <input maxlength="80" name="email" type="email" value="<?php echo $email ?>">
+                            <input class="required email" data-validation="email" data-validation-error-msg="You did not enter a valid e-mail" maxlength="80" name="email" type="email" value="<?php echo $email ?>">
                         </div>
-						<div data-role="fieldcontain">
+						<div class="ui-field-contain" id="phone">
                             <label for="phone">Phone Number</label>
                             <input name="phone" id="phone" type="tel" value="<?php echo $phone ?>">
                         </div>						
-						<div data-role="fieldcontain">		
-							<fieldset data-role="controlgroup" data-type="horizontal"> 
-								<legend>Best contact time</legend> 
-									<label for="radio_anyTime">Any Time</label> 	
-									<input  type="radio" name="contact_time" id="radio_anyTime" value="Any Time"> 
-									<label for="radio_morning">Morning</label> 	
-									<input  type="radio" name="contact_time" id="radio_morning" value="Morning"> 						
-									<label for="radio_afternoon">Afternoon</label> 			
-									<input  type="radio" name="contact_time" id="radio_afternoon" value="Afternoon">
-							</fieldset>
-						</div>
-						<div data-role="fieldcontain">								
+						<div class="ui-field-contain" id="time">								
+							<label for="contact_time" class="select">Best contact time</label> 
+							<select name="contact_time" id="contact_time" data-native-menu="false">
+								<option></option>
+								<option value="Any Time"/>Any Time</option>
+								<option value="Morning">Morning</option>
+								<option value="Afternoon">Afternoon</option>
+							</select>
+						</div>	
+						<div class="ui-field-contain" id="days">								
 							<label for="contact_days[]" class="select">Best day(s) to contact you</label> 
 							<select name="contact_days[]" id="contact_days[]" multiple="multiple" data-native-menu="false">
-								<option>Day(s)</option>
+								<option></option>
 								<option value="Any Day"/>Any Day</option>
 								<option value="Monday">Monday</option>
 								<option value="Tuesday">Tuesday</option>
@@ -94,28 +151,30 @@ session_start();
 								<option value="Friday">Friday</option>
 							</select>
 						</div>						
-						<div data-role="fieldcontain">		
+						<div class="ui-field-contain" id="campus">		
 							<label for="campus_select" class="select">Preferred campus</label>
-							<select name="campus_select" id="campus_select">								
-								<option value="Any Location">Select Location</option> 	
+							<select name="campus_select" id="campus_select" data-native-menu="false">	
+								<option></option>
+								<option value="Any Location">Any Location</option> 	
 								<option value="Elkhorn Valley Campus">Elkhorn Valley Campus</option> 							
 								<option value="Fort Omaha Campus">Fort Omaha Campus</option> 			
 								<option value="MCC Express">MCC Express</option> 			
 								<option value="South Omaha Campus">South Omaha Campus</option> 
 							</select>
 						</div>
-						<div data-role="fieldcontain">
-							<input type="submit" value="Submit">
+						<div class="ui-field-contain" id="submit_btn">
+							<input id="btn" type="submit" value="Submit">
 						</div>
                     </form>
 	<?php } else {
 		$emailRegex = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
 		$nameRegex = "/^[A-Za-z .'-]+$/";
-		$errors = array();
-		$mccStatus = $_POST['mcc_status'];	
-		if ($mccStatus == 'Never taken classes at MCC') {
-			$errors[] = 'Our Career Navigators are able to assist current MCC students and alumni with the next steps of career exploration and planning.  If you are <b>not</b> a current student or alumni, we encourage you to contact Heartland Workforce Development for assistance with career exploration and job search.<br><a href="http://www.hws-ne.org/for-workers/career-center/">Heartland Workforce Development</a><br>Call: 402-738-4060';
-		} 
+		$errors = array();	
+		if (empty($_POST['mcc_status'])) {
+			$errors[] = 'You must specify your MCC status.';
+		} else {
+			$mccStatus = $_POST['mcc_status'];
+		}
 		if (empty($_POST['first_name'])) {
 			$errors[] = 'You must specify a first name.';
 		} else {
@@ -139,33 +198,32 @@ session_start();
 		} else {
 			$errors[] = 'You must select a contact method.';
 		}	 
-		if ($contactMethod == 'Email') {
-			if (empty($_POST['email'])) {
-				$errors[] = 'You must specify an email or select another contact method.';
-			} else {
-				$email = $_POST['email'];
-				$phone = $_POST['phone'];	
-				$_SESSION['_phone'] = $phone;
-				if (!preg_match($emailRegex, $email)) {
-					$errors[] = 'The email does not appear to be valid.';
-				} 
-				$_SESSION['_email'] = $email;
-			}
-		} 
+		
+		if (empty($_POST['email'])) {
+			$errors[] = 'You must specify an email.';
+		} else {
+			$email = $_POST['email'];
+			if (!preg_match($emailRegex, $email)) {
+				$errors[] = 'The email does not appear to be valid.';
+			} 
+			$_SESSION['_email'] = $email;
+		}	
+		if (isset($_POST['phone'])) {
+			$phone = $_POST['phone'];
+			$_SESSION['_phone'] = $phone;
+		} else {
+			$phone = 'None Specified';
+		}
 		if ($contactMethod == 'Phone'){	
 			if (empty($_POST['phone'])) {
 				$errors[] = 'You must specify a phone number or select another contact method.';			
-			} else {
-				$phone = $_POST['phone'];
-				$_SESSION['_phone'] = $phone;
-				if (!empty($_POST['email'])) {
-					$email = $_POST['email'];
-					if (!preg_match($emailRegex, $email)) {
-						$errors[] = 'The email does not appear to be valid.';
-					} 
-					$_SESSION['_email'] = $email;
-				}
-			}
+			} 
+			if (empty($_POST['contact_time'])) {
+				$errors[] = 'Please specify a time for us to call you.';			
+			} 
+			if (empty($_POST['contact_days'])) {
+				$errors[] = 'Please specify a day(s) for us to call you.';			
+			} 
 		} 
 		if (isset($_POST['contact_time'])) {
 			$time = $_POST['contact_time'];
@@ -182,7 +240,7 @@ session_start();
 			$location = $_POST['campus_select'];
 		} else {
 			$location = 'None Specified';
-		}    
+		}   
 		if (count($errors) === 0) {  
 			$_SESSION['_firstName'] = $firstName;
 			$_SESSION['_lastName'] = $lastName;
@@ -190,13 +248,13 @@ session_start();
 			$type1 = personalityType($_SESSION['type1']);
 			$type2 = personalityType($_SESSION['type2']);
 			$type3 = personalityType($_SESSION['type3']);
-			$message = $firstName . ' ' . $lastName . " has requested to meet with a Career Services Navigator.\n\n" .
+			$message_admin = $firstName . ' ' . $lastName . " has requested to meet with a Career Services Navigator.\n\n" .
 				"This student has taken the Holland Code Assessment.\n\n" .		
 				"The student has the following top three personality types: \n\n" .
 				$type1 . "\n" .
 				$type2 . "\n" .
 				$type3 . "\n\n" .
-				"MCC Status: " . $mccStatus . "\n" .
+				"They are " . $mccStatus . "\n" .
 				"Preferred Contact Method: " . $contactMethod . "\n" .
 				"Student Email Address: " . $email . "\n" .
 				"Student Phone Number: " . $phone . "\n" .
@@ -205,9 +263,29 @@ session_start();
 				"Preferred Meeting Location: " . $location . "\n\n" .	
 				"Please do not reply to this message directly.\n\n";
 			$fromEmail = 'CCC@MCC.net';
-			$subject = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
-			$email_to = "mcccsmwa@gmail.com"; 
-			mail($email_to, $subject, $message, $fromEmail);
+			$subject_admin = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
+			$email_admin = "mcccsmwa@gmail.com";  
+			
+			mail($email_admin, $subject_admin, $message_admin, $fromEmail);
+						
+			$message_user = "Thank you " . $firstName . " " . $lastName . " for requesting to meet with a Career Services Navigator.\n\n" .
+				"If you did not make this request or if any of the following information is incorrect, please contact us.\n\n" .
+				"These are your top three personality types: \n\n" .
+				$type1 . "\n" .
+				$type2 . "\n" .
+				$type3 . "\n\n" .
+				"You stated you are " . $mccStatus . "\n" .
+				"Your preferred Contact Method: " . $contactMethod . "\n" .
+				"Your Email Address: " . $email . "\n" .
+				"Your Phone Number: " . $phone . "\n" .
+				"Preferred Meeting Days: " . $days . "\n" .
+				"Preferred Meeting Time: " . $time . "\n" . 
+				"Preferred Meeting Location: " . $location . "\n\n" .	
+				"Please do not reply to this message directly.\n\n";
+			$subject_user = 'Your MCC Career Services Appointment Request';
+			/* $email_user = $email;  */
+			$email_user = "mcccsmwa@gmail.com";  
+			mail($email_user, $subject_user, $message_user, $fromEmail);
 			
 			$status = 'requested';
 
@@ -242,7 +320,8 @@ catch(PDOException $e)
 			
 	?>
 			<h3>Thank you for requesting to meet with Career Services.<br>
-			A Career Navigator will contact you within two business days.</h3>
+			A Career Navigator will contact you within two business days.<br>
+			Please check your email for your appointment request confirmation.</h3>
 			<div><br>
 				<!--<h3>Take Charge of Your Future</h3>-->
 				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
@@ -256,6 +335,9 @@ catch(PDOException $e)
 				<li class="error"><?php echo $error; ?></li>
 	<?php } ?>
 				</ul>
+				<div>					
+					<a class="button" href="#csmwa" data-inline="true" data-iconpos="notext" data-role="button" data-rel="back">Back To Form</a>
+				</div>
 	<?php
 		}
 	} ?>	
@@ -269,4 +351,3 @@ include ('includes/footer.php');
 </div><!-- closing page div -->
 </body><!-- closing body div -->
 </html><!-- closing html div -->
-
