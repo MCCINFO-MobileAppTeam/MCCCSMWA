@@ -1,13 +1,11 @@
 <?php
-$scripts = array('//code.jquery.com/ui/1.10.3/jquery-ui.min.js', 'assets/scripts/assessment.js');
-$title = 'Identity Your Interests';
+// require_once 'includes/page_start.php';
 ?>
-
 <!DOCTYPE html> 
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>MCCCS Assessment</title>
+	<title>Error Apology</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
 	<link rel="stylesheet" href="assets/css/mcccsmwa.css">
@@ -16,7 +14,6 @@ $title = 'Identity Your Interests';
 </head> 
 <body> 
 
-<!-- Assessment Home Page -->
 <div data-role="page" data-content-theme="a" id="csmwa">
 	
 	<div data-role="header" id="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -24,17 +21,21 @@ $title = 'Identity Your Interests';
 			<a href="#csmwa" data-icon="back" data-inline="true" data-iconpos="notext" class="ui-btn-left" data-rel="back">back</a>
 			<img src="assets/images/mcc_career_services_small.png" width="203" height="59" alt="MCC Career Services">
 	</div><!--header closing div-->
-
 	
 	<div data-role="content"><!-- opening content div-->
-		<?php require_once 'includes/header_demo.php'; ?>
-						<h1>Identify Your Interests</h1>
-						<div id="assessment" style="margin: auto;" ></div>	
+                <h3>We apologize</h3>	
+                    <p>Our app has encountered an error.</p>
+					<br>
+				<h3>Please try our app again</h3>
+						<div>
+							<a class="button" href="index.php" data-role="button" data-inline="true" >Home page</a>
+						</div>					
+				<p>The problem has been logged and will be investigated by systems support.<br>
 	</div><!--closing content div-->
-					
+	
 <?php
 include ('includes/footer.php');
-?>   
+?>  
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

@@ -59,3 +59,22 @@ function personalityTypeHtml($hollandCode)
 	return $personalityTypeHtml;
 }
 
+function writeLogMessage($pdo,$visitNum, $message)
+{
+
+try {
+	$query = 'INSERT INTO log_message(visit_num, message) VALUES(:visit_num, :message)';
+	$statement = $pdo->prepare($query);
+	$statement->bindParam(':visit_num', $visitNum, PDO::PARAM_STR);	
+	$statement->bindParam(':message', $message, PDO::PARAM_STR);
+	$statement->execute();	
+}
+catch(PDOException $e)
+{
+/* Redirect browser to the home page of the app*/
+	header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology_no_db_log.php");
+ /* Make sure that code below does not get executed when we redirect. */
+	exit;	
+}
+
+}

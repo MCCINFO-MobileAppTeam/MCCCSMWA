@@ -14,7 +14,6 @@ require_once 'includes/page_start.php';
 </head> 
 <body> 
 
-<!-- MCCCS Information Page -->
 <div data-role="page" data-content-theme="a" id="csmwa">
 	
 	<div data-role="header" id="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -24,21 +23,14 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-                <h2>Our Mission</h2>	
-                    <p>The mission of Career Services at Metropolitan Community College is to foster collaborative relationships with both internal and external partners, to facilitate the development of responsible career decision-making skills and to provide comprehensive career development.</p>
+                <h3>We apologize</h3>	
+                    <p>Our app has encountered an error.</p>
 					<br>
-				<h2>Career Services Offers</h2>
-					<p>Career assessment and exploration<br>
-					NEworks registration assistance<br>
-					Interview preparation<br>
-					Job and internship strategies<br>
-					Résumé assistance<br>
-					Career Fairs (Open to all)</p>
-					<br>
-                <h2>Get to Know Us Better</h2>				
-                <!--<iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>-->
-               <h2><a href="https://www.mccneb.edu/careercenter/" rel="external" data-role="button" data-inline="true" >Visit our Career Center</a></h2>			
-				
+				<h3>Please try our app again</h3>
+						<div>
+							<a class="button" href="index.php" data-role="button" data-inline="true" >Home page</a>
+						</div>					
+				<p>The problem has been logged and will be investigated by technical support.<br>
 	</div><!--closing content div-->
 	
 <?php

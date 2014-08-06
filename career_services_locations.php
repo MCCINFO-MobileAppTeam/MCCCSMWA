@@ -24,43 +24,39 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-                <h2>Career Services Locations</h2>	
+                <h3>Career Services Locations</h3>	
 					<br>
 
 	<div data-role="collapsible-set">
 
 		<div data-role="collapsible">
 		<h3>South Omaha Campus</h3>
-		<p>27th and Q Street<br>Connector Building 148<br>Career Navigator:  Jill Rathje<br>Mon. 10am-3pm<br>Fri. 10am-2pm<br>Career Navigator:  Monki Cannon<br>Tues. & Thurs. 10am-3pm</p>
+		<p>2909 Edward Babe Gomez Ave.<br>Connector Building 148</p>
 		</div>
 
 		<div data-role="collapsible">
-		<h3>MCC Express</h3>
-		<p>24th & Vinton Street<br>Career Navigator:  Moniki Cannon<br>Weds. 10am-3pm</p>
+		<h3>MCC Express - Vinton</h3>
+		<p>3002 S. 24th St.<br>Omaha, NE</p>
 		</div>		
 
 		<div data-role="collapsible">
 		<h3>Fort Omaha Campus</h3>
-		<p>30th and Fort Street<br>Building 10<br>Career Navigator:  Angela McGraw<br>Mon. & Tues. 8:30am-12:30pm<br>Thurs. & Fri. 8:30am-12:30pm<br>Building 10<br>Weds. 8:30am-12:30pm</p>
+		<p>5300 N. 30th St.<br>Building 10</p>
 		</div>
 
 		<div data-role="collapsible">
-		<h3>Elkorn Valley Campus</h3>
-		<p>204th & Dodge Street<br>Career Navigator:  Jill Rathje<br>Weds. & Thurs 10am-3pm</p>
+		<h3>Elkhorn Valley Campus</h3>
+		<p>N. 204th St. & W. Dodge Rd.<br>Elkhorn, NE</p>
 		</div>	
-
 		
 	</div>
 
 					
 </div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?> 
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

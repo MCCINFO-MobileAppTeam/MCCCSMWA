@@ -2,7 +2,7 @@
 //require_once 'includes/handler.php';
 //include ('includes/handler.php');
 //trigger_error ('testing 123', 1024);
-require_once 'includes/page_start.php';
+require_once 'includes/page_start_index.php';
 $_SESSION['_quesSet'] = 1;
 ?>
 <!DOCTYPE html> 
@@ -27,21 +27,19 @@ $_SESSION['_quesSet'] = 1;
 	</div><!--header closing div-->
 
 	<div data-role="content"><!-- opening content div-->
-	    <p class="indexintro">Match yourself to career opportunities and MCC majors.</p>
+	    <p class="indexintro"><strong>D</strong>iscover. <strong>E</strong>ngage. <strong>N</strong>avigate.</p>
 		<ul data-role="listview">
 			<li data-icon="eye" data-iconshadow="true"><a href="assessment_intro.php">Discover your passion</a></li>
 			<li data-icon="search" data-iconshadow="true"><a href="https://www.mccneb.edu/future/get_content.asp?url=/careercenter/career_cluster/" rel="external">Engage in education</a></li>
             <li data-icon="video" data-iconshadow="true"><a href="neworks.php">Navigate your career</a></li>
-			<li data-icon="info" data-iconshadow="true"><a href="career_services_information.php">Explore MCC</a></li>
-			<li data-icon="action" data-iconshadow="true"><a href="contact_career_services.php">Contact MCC</a></li>			
+			<li data-icon="info" data-iconshadow="true"><a href="career_services_information.php">Explore Career Services</a></li>
+			<li data-icon="action" data-iconshadow="true"><a href="contact_career_services.php">Contact Us</a></li>			
 		</ul>		
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->   
-		<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | 
-		<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-		</p>
-	</div><!-- footer Closing div -->   
+<?php
+include ('includes/footer.php');
+?> 
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

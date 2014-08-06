@@ -141,7 +141,7 @@ $_SESSION['_assessComplete'] = "true";
 	
 	<div data-role="content"><!-- opening content div-->
 		
-        <h1>Assessment Results</h1>
+        <h3>Assessment Results</h3>
         <div class="options">
 		<?php
 		for ($i = 0; $i < 3; $i++) {
@@ -180,19 +180,16 @@ $_SESSION['_assessComplete'] = "true";
 				$statement->execute();
 				?>
         </div>
-			<a class="button" href="careers_majors.php?t1=<?php echo $types[0]; ?>&amp;t2=<?php echo $types[1]; ?>&amp;t3=<?php echo $types[2]; ?>&amp;pt=<?php echo $types[$i]; ?>" data-role="button" data-inline="true" >See Careers and Majors</a>	<br><br>
+			<a class="button" href="careers_majors.php?t1=<?php echo $types[0]; ?>&amp;t2=<?php echo $types[1]; ?>&amp;t3=<?php echo $types[2]; ?>&amp;pt=<?php echo $types[$i]; ?>" data-role="button" data-inline="true" >See Majors & Careers</a>	<br><br>
 			<!--<a class="button" href="index.php">Home Page</a>-->	
 			<h3>Assessment results don't seem to fit you?</h3>
-			<h4>Try the assessment again with a new set of questions.</h4>				
+			<p>Try the assessment again with a new set of questions.</p>				
 			<a class="button" href="assessment.php" data-role="button" data-inline="true" >Retake the Assessment</a>
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>   
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

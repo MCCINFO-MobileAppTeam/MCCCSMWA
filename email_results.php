@@ -30,7 +30,7 @@ require_once 'includes/functions.php';
 			$firstName = $_SESSION['_firstName'];
 			$lastName = $_SESSION['_lastName'];
 			$email = $_SESSION['_email'];?>
-					<h1>Receive Your Assessment Results</h1>
+					<h3>Receive Your <br> Assessment Results</h3>
 					<form data-ajax="false" method="POST">
                         <div data-role="fieldcontain">
                             <label for="first_name">First Name</label>
@@ -162,7 +162,7 @@ require_once 'includes/functions.php';
 		  
 		  <br><br><b>Contact MCC Career Services</b><br>
 		  Call:  (402) 250-6143<br>
-		  Email:  skip123paschall@gmail.com<br>
+		  Email:  mcccsmwa@gmail.com<br>
 		  <a href="https://www.mccneb.edu/careercenter/">Career Services full site</a><br>   
 		  <a href="http://infolnx7.mccinfo.net/~repaschall/mcccsmwa_skip/">Career Services mobile app</a>     
 
@@ -174,13 +174,37 @@ require_once 'includes/functions.php';
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	mail($email, $subject, $message, $headers);
-	?>
-			<h3>Thank you for taking the assessment.<br>
+
+try {		
+	$query = 'INSERT INTO email_request(visit_num, first_name, last_name, email_addr, type_1, type_2, type_3) ' .
+		'VALUES(:visit_num, :first_name, :last_name, :email_addr, :type_1, :type_2, :type_3)';
+	$statement = $pdo->prepare($query);
+	$statement->bindParam(':visit_num', $_SESSION['visit_num'], PDO::PARAM_STR);
+	$statement->bindParam(':first_name', $firstName, PDO::PARAM_STR);
+	$statement->bindParam(':last_name', $lastName, PDO::PARAM_STR);
+	$statement->bindParam(':email_addr', $email, PDO::PARAM_STR);	
+	$statement->bindParam(':type_1', $type1, PDO::PARAM_STR);	
+	$statement->bindParam(':type_2', $type2, PDO::PARAM_STR);	
+	$statement->bindParam(':type_3', $type3, PDO::PARAM_STR);		
+	$statement->execute();	
+}	
+catch(PDOException $e)
+{
+	writeLogMessage($pdo,$_SESSION['visit_num'], $e->getMessage());	
+	/* Redirect browser to the home page of the app*/
+	//header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
+	/* Make sure that code below does not get executed when we redirect. */
+	//exit;	
+}	
+?>
+			<h3>Thank you for taking the assessment.<br><br>
 			Check your email for your assessment results.</h3>
 			<div>
 				<!--<h3>Take Charge of Your Future</h3>-->
-				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Return to Next Steps</a>
-			</div>						
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
+			</div>	
+
+			
 	<?php
 		}
 		else {
@@ -196,12 +220,9 @@ require_once 'includes/functions.php';
 	
 	</div><!--closing content div-->
 	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?>   
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

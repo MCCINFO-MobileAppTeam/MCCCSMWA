@@ -52,11 +52,11 @@ require_once 'includes/functions.php';
 	<div data-role="content"><!-- opening content div-->
 
 	<?php if ($_SERVER['REQUEST_METHOD'] !== 'POST') { ?>
-			<h1>Please give us your feedback to help improve user experience.</h1>
+			<h3>Please share your feedback to help us improve our app.</h3>
 			<form data-ajax="false" method="POST">	
 				<div data-role="fieldcontain">	
 					<fieldset data-role="controlgroup"> 
-						<legend>Did you have any issues taking the assessment?</legend> 											
+						<legend>Did you like the assessment?</legend> 											
 							<label for="asmnt_yes">Yes</label> 	 
 							<input  type="radio" name="assessment" id="asmnt_yes" value="Yes">					
 							<label for="asmnt_no">No</label> 			
@@ -64,12 +64,12 @@ require_once 'includes/functions.php';
 					</fieldset>
 				</div>
 				<div id="asmnt_text" data-role="fieldcontain">
-					<label for="asmnt_comment">What issues did you have?</label>
+					<label for="asmnt_comment">Assessment suggestions</label>
 					<textarea name="asmnt_comment" id="asmnt_comment" value=""></textarea>
 				</div>				
 				<div data-role="fieldcontain">	
 					<fieldset data-role="controlgroup"> 
-						<legend>Was the app navigation easy to follow?</legend> 											
+						<legend>Was the app navigation clear?</legend> 											
 							<label for="nav_yes">Yes</label> 	 
 							<input  type="radio" name="navigation" id="nav_yes" value="Yes">					
 							<label for="nav_no">No</label> 			
@@ -88,13 +88,13 @@ require_once 'includes/functions.php';
 							<label for="usage_no">No</label> 			
 							<input  type="radio" name="usage" id="usage_no" value="No">			
 					</fieldset>					
-				</div>			
-				<div id="usage_text" data-role="fieldcontain">
-					<label for="usage_comment">What was difficult?</label>
+				</div>	
+				<div id="nav_text" data-role="fieldcontain">
+					<label for="nav_comment">Usability suggestions</label>
 					<textarea name="usage_comment" id="usage_comment" value=""></textarea>
-				</div>
+				</div>				
 				<div data-role="fieldcontain">
-					<label for="comment">Please provide any additional feedback</label> 
+					<label for="comment">Any additional feedback</label> 
 					<textarea name="comment" id="comment" value=""></textarea>
 				</div>
 				<input type="submit" value="Submit">
@@ -136,23 +136,44 @@ require_once 'includes/functions.php';
 			"Please do not reply to this message directly.\n\n";
 		$fromEmail = 'CCC@MCC.net';
 		$subject = "Feedback sent from MCC Career Services App: ";
-		/* $email_to = "skip123paschall@gmail.com"; */
-		$email_to = "rhschuman@gmail.com";
+		$email_to = "mcccsmwa@gmail.com";
 		mail($email_to, $subject, $message, $fromEmail);
+		
+try {	
+	$query = 'INSERT INTO feedback(visit_num, q1,q2,q3,q4,q5,q6,q7) ' .
+		'VALUES(:visit_num, :q1,:q2,:q3,:q4,:q5,:q6,:q7)';
+	$statement = $pdo->prepare($query);
+	$statement->bindParam(':visit_num', $_SESSION['visit_num'], PDO::PARAM_STR);
+	$statement->bindParam(':q1', $assessment, PDO::PARAM_STR);	
+	$statement->bindParam(':q2', $asmnt_comment, PDO::PARAM_STR);	
+	$statement->bindParam(':q3', $navigation, PDO::PARAM_STR);	
+	$statement->bindParam(':q4', $nav_comment, PDO::PARAM_STR);	
+	$statement->bindParam(':q5', $usage, PDO::PARAM_STR);	
+	$statement->bindParam(':q6', $usage_comment, PDO::PARAM_STR);	
+	$statement->bindParam(':q7', $comment, PDO::PARAM_STR);		
+	$statement->execute();
+}	
+catch(PDOException $e)
+{
+	writeLogMessage($pdo,$_SESSION['visit_num'], $e->getMessage());	
+	/* Redirect browser to the home page of the app*/
+	header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
+	/* Make sure that code below does not get executed when we redirect. */
+	exit;	
+}			
+		
 	?>
-						<h3>Thank you for taking the time to give us your feedback.</h3>
+						<h3>Thank you for sharing your feedback.</h3>
 						<div>
-							<a class="button" href="index.php">Return to Home Page</a>
-						</div>										
+							<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
+						</div>	
+
 	<?php
 	} ?>		
 	</div><!--closing content div-->
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
-		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
-			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
-			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
-			</p>
-	</div><!-- footer closing div -->   
+<?php
+include ('includes/footer.php');
+?> 
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->

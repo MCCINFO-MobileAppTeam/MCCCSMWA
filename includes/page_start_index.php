@@ -3,15 +3,11 @@ require_once 'includes/pdo.php';
 require_once 'includes/functions.php';
 
 session_start();
+
 if (!isset($_SESSION['visit_num'])) {
-	writeLogMessage($pdo,0,'visit_num not in session');
-	/* Redirect browser to the home page of the app*/
-	header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/index.php");
-	/* Make sure that code below does not get executed when we redirect. */
-	exit;
-}else{
+    $_SESSION['visit_num'] = rand();
+	
 	try {	
-		$_SESSION['visit_num'] = rand();
 		$query = 'INSERT INTO visit(visit_num) VALUES(:visit_num)';
 		$statement = $pdo->prepare($query);
 		$statement->bindParam(
@@ -21,13 +17,15 @@ if (!isset($_SESSION['visit_num'])) {
 		);
 		$statement->execute();
 	}
-	catch(PDOException $e) {
-			writeLogMessage($pdo,120, $e->getMessage());	
-			/* Redirect browser to the home page of the app*/
-			header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
-			/* Make sure that code below does not get executed when we redirect. */
-			exit;	
+	catch(PDOException $e)
+	{
+		writeLogMessage($pdo,110, $e->getMessage());	
+		/* Redirect browser to the home page of the app*/
+		header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
+		/* Make sure that code below does not get executed when we redirect. */
+		exit;	
 	}	
+	
 }
 
 try {	
