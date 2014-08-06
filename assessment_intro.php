@@ -24,16 +24,38 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
+<<<<<<< HEAD
         <h3>Identify Your Interests</h3>
         <p class="intro">Take our assessment to learn how your personality matches to MCC programs and careers.<br><br>
+=======
+<<<<<<< HEAD
+        <h3>Identify Your Interests</h3>
+        <p class="intro">Take our assessment to learn how your personality matches to careers and MCC programs.<br><br>
+>>>>>>> origin/master
 		Be honest with yourself.<br>
 		Go with your first thought.<br>
 		Relax and have fun.</p>
 		
 		<!--<p class="intro">Be honest with yourself.<br>
+<<<<<<< HEAD
         Go with your first thought.<br>
         Relax and have fun.<br>
         </p>-->		
+=======
+        Go with your first thought.<br>
+        Relax and have fun.<br>
+        </p>-->		
+=======
+        <h2>Identify Your Interests</h2>
+        <p class="intro">MCC Career Services provides a scientifically validated self-assessment tool.<br><br>
+        Learn how your personality matches to career options and MCC programs.</p>
+        <h2>Tips for taking the assessment</h2>
+		<p class="intro">Be honest with yourself.<br>
+        Go with your first thought.<br>
+        Relax and have fun.<br>
+        </p>		
+>>>>>>> origin/master
+>>>>>>> origin/master
 					
 		<ul data-role="listview">
 			<li data-icon="action" data-iconshadow="true"><a href="assessment.php">Take the assessment now</a></li>

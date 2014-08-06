@@ -208,6 +208,7 @@ session_start();
 			} 
 			$_SESSION['_email'] = $email;
 		}	
+<<<<<<< HEAD
 		if ($contactMethod == 'Phone'){	
 			if (empty($_POST['phone'])) {
 				$errors[] = 'You must specify a phone number or select another contact method.';			
@@ -216,6 +217,24 @@ session_start();
 				$_SESSION['_phone'] = $phone;
 				
 			}
+=======
+		if (isset($_POST['phone'])) {
+			$phone = $_POST['phone'];
+			$_SESSION['_phone'] = $phone;
+		} else {
+			$phone = 'None Specified';
+		}
+		if ($contactMethod == 'Phone'){	
+			if (empty($_POST['phone'])) {
+				$errors[] = 'You must specify a phone number or select another contact method.';			
+			} 
+			if (empty($_POST['contact_time'])) {
+				$errors[] = 'Please specify a time for us to call you.';			
+			} 
+			if (empty($_POST['contact_days'])) {
+				$errors[] = 'Please specify a day(s) for us to call you.';			
+			} 
+>>>>>>> origin/master
 		} 
 		if (isset($_POST['contact_time'])) {
 			$time = $_POST['contact_time'];
@@ -256,8 +275,13 @@ session_start();
 				"Please do not reply to this message directly.\n\n";
 			$fromEmail = 'CCC@MCC.net';
 			$subject_admin = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
+<<<<<<< HEAD
 			$email_admin = "mcccsmwa@gmail.com"; 
 			/*$email_admin = "rhschuman@gmail.com"; */
+=======
+			$email_admin = "mcccsmwa@gmail.com";  
+			
+>>>>>>> origin/master
 			mail($email_admin, $subject_admin, $message_admin, $fromEmail);
 						
 			$message_user = "Thank you " . $firstName . " " . $lastName . " for requesting to meet with a Career Services Navigator.\n\n" .
@@ -275,9 +299,14 @@ session_start();
 				"Preferred Meeting Location: " . $location . "\n\n" .	
 				"Please do not reply to this message directly.\n\n";
 			$subject_user = 'Your MCC Career Services Appointment Request';
+<<<<<<< HEAD
 			$email_user = "rhschuman@gmail.com"; 
 			/* $email_user = $email;  */
 			/* $email_user = "mcccsmwa@gmail.com";  */
+=======
+			/* $email_user = $email;  */
+			$email_user = "mcccsmwa@gmail.com";  
+>>>>>>> origin/master
 			mail($email_user, $subject_user, $message_user, $fromEmail);
 			
 			$status = 'requested';
@@ -344,4 +373,3 @@ include ('includes/footer.php');
 </div><!-- closing page div -->
 </body><!-- closing body div -->
 </html><!-- closing html div -->
-
