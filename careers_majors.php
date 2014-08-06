@@ -73,11 +73,7 @@ writeLogMessage($pdo,999, 'Just before get types');
 		$primaryType = 'r';
 	}
 	?>
-<<<<<<< HEAD
 		<h3>MCC Majors & Careers</h3>
-=======
-		<h3>Careers & MCC Majors</h3>
->>>>>>> origin/master
 		<div>
 			<h4>Ready For Your Future?</h4>
 		</div>
