@@ -29,11 +29,12 @@ require_once 'includes/page_start.php';
 					<br>
 				<h2>Career Services Offers</h2>
 					<p>Career assessment and exploration<br>
+					Career Fairs (Open to all)<br>
 					NEworks registration assistance<br>
 					Interview preparation<br>
 					Job and internship strategies<br>
-					Résumé assistance<br>
-					Career Fairs (Open to all)</p>
+					Résumé assistance
+					</p>
 					<br>
                 <h2>Get to Know Us Better</h2>				
                 <!--<iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>-->

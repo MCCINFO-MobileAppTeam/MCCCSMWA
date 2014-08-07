@@ -25,7 +25,7 @@ require_once 'includes/page_start.php';
 	
 	<div data-role="content"><!-- opening content div-->
                 <h3>Our Partnership <br>with NEworks</h3>	
-                    <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize the NEworks job site.</p>
+                    <p>MCC is the first institution in the state to partner with the Nebraska Department of Labor and utilize their NEworks job site.</p>
 					<br>
 					
 				<h3>NEworks can benefit <br>your career planning</h3>

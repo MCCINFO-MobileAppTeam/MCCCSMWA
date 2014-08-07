@@ -93,11 +93,11 @@ session_start();
 								<legend>Please Selelct One</legend> 											
 									<label for="radio_current">I am a <b>CURRENT</b> student.</label> 	 
 									<input type="radio" name="mcc_status" id="radio_current" value="a current MCC student." required>	
-									<label for="radio_alumni">I am an <b>ALUMNI/GRADUATE</b> of MCC</label> 			
+									<label for="radio_alumni">I am an <b>ALUMNI</b> of MCC.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_alumni" value="an MCC alumni.">
-									<label for="radio_prospective">I am a <b>PROSPECTIVE</b> student and will enroll this upcoming quarter.</label> 			
+									<label for="radio_prospective">I am a <b>PROSPECTIVE</b> student and am interested in MCC.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_prospective" value="a prospective student at MCC.">
-									<label for="radio_never">I am not interested in MCC, but would like information on exploring new careers.</label> 			
+									<label for="radio_never">I want to learn more about career opportunities.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_never" value="not interested in MCC">
 							</fieldset>
 						</div>
@@ -119,7 +119,7 @@ session_start();
 									<label for="radio_email">Email Me</label> 	 
 									<input  type="radio" name="contact_method" id="radio_email" value="Email" required>					
 									<label for="radio_phone">Call Me</label> 			
-									<input  type="radio" name="contact_method" id="radio_phone" value="Phone" required>
+									<input  type="radio" name="contact_method" id="radio_phone" value="Phone">
 							</fieldset>
 						</div>
                         <div class="ui-field-contain" id="email">
@@ -208,14 +208,22 @@ session_start();
 			} 
 			$_SESSION['_email'] = $email;
 		}	
+		if (isset($_POST['phone'])) {
+			$phone = $_POST['phone'];
+			$_SESSION['_phone'] = $phone;
+		} else {
+			$phone = 'None Specified';
+		}
 		if ($contactMethod == 'Phone'){	
 			if (empty($_POST['phone'])) {
 				$errors[] = 'You must specify a phone number or select another contact method.';			
-			} else {
-				$phone = $_POST['phone'];
-				$_SESSION['_phone'] = $phone;
-				
-			}
+			} 
+			if (empty($_POST['contact_time'])) {
+				$errors[] = 'Please specify a time for us to call you.';			
+			} 
+			if (empty($_POST['contact_days'])) {
+				$errors[] = 'Please specify a day(s) for us to call you.';			
+			} 
 		} 
 		if (isset($_POST['contact_time'])) {
 			$time = $_POST['contact_time'];
@@ -256,8 +264,8 @@ session_start();
 				"Please do not reply to this message directly.\n\n";
 			$fromEmail = 'CCC@MCC.net';
 			$subject_admin = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
-			$email_admin = "mcccsmwa@gmail.com"; 
-			/*$email_admin = "rhschuman@gmail.com"; */
+			$email_admin = "mcccsmwa@gmail.com";  
+			
 			mail($email_admin, $subject_admin, $message_admin, $fromEmail);
 						
 			$message_user = "Thank you " . $firstName . " " . $lastName . " for requesting to meet with a Career Services Navigator.\n\n" .
@@ -275,9 +283,8 @@ session_start();
 				"Preferred Meeting Location: " . $location . "\n\n" .	
 				"Please do not reply to this message directly.\n\n";
 			$subject_user = 'Your MCC Career Services Appointment Request';
-			$email_user = "rhschuman@gmail.com"; 
 			/* $email_user = $email;  */
-			/* $email_user = "mcccsmwa@gmail.com";  */
+			$email_user = "mcccsmwa@gmail.com";  
 			mail($email_user, $subject_user, $message_user, $fromEmail);
 			
 			$status = 'requested';
