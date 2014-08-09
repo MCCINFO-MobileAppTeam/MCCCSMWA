@@ -141,6 +141,12 @@ a:hover, a:active, a:focus {
     -ms-text-size-adjust: 0.8125em; /* 2 */
 } 
 
+#feedback { float: right;
+			padding-top: 20px;
+}
+
+.apptradio { padding-bottom: 18px;
+}
 .question-button {
 	border-radius: 0.6em;
 	color: #F7FE2E;
