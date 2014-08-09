@@ -90,14 +90,14 @@ session_start();
 						</div>
 						<div class="ui-field-contain" id="status">	
 							<fieldset data-role="controlgroup"> 
-								<legend>Please Select One</legend> 											
+								<legend>Please Selelct One</legend> 											
 									<label for="radio_current">I am a <b>CURRENT</b> student.</label> 	 
 									<input type="radio" name="mcc_status" id="radio_current" value="a current MCC student." required>	
 									<label for="radio_alumni">I am an <b>ALUMNI</b> of MCC.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_alumni" value="an MCC alumni.">
-									<label for="radio_prospective">I am a <b>PROSPECTIVE</b> student and am interested in MCC.</label> 			
+									<label for="radio_prospective" class="apptradio"<a href="http://www.mccneb.edu">I am a <b>PROSPECTIVE</b> student and am interested in MCC.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_prospective" value="a prospective student at MCC.">
-									<label for="radio_never">I want to learn more about career opportunities.</label> 			
+									<label for="radio_never" class="apptradio">I want to learn more about career opportunities.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_never" value="not interested in MCC">
 							</fieldset>
 						</div>
