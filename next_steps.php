@@ -25,42 +25,38 @@ require_once 'includes/page_start.php';
 	
 	<div data-role="content"><!-- opening content div-->
     
-            <h3>You're On Your Way!</h3>
+            <h1>You're On Your Way!</h1>
                 <div class="options">
                     <div class="option">
                         <div class="option-text">
-                            <p>Send my Assessment results to me.</p>
+                            <p>Send my Assessment results to my email account.</p>
                         </div>
                         <a class="button" href="email_results.php" data-role="button" data-icon="mail" data-mini="false">Email my Assessment</a>
                     </div>
                     <div class="option">
                         <div class="option-text">
-                            <p>Talk with a Career Navigator.</p>
+                            <p>Talk with a Career Services Navigator about your future.</p>
                         </div>
-                        <a class="button" href="schedule_appointment.php" data-role="button" data-icon="mail" data-mini="false">Schedule Appointment</a>
+                        <a class="button" href="schedule_appointment.php" data-role="button" data-icon="mail" data-mini="false" rel="external">Schedule Appointment</a>
                     </div>
                     <div class="option">
                         <div class="option-text">
-                            <p>Contact Career Services.</p>
+                            <p>Contact information for Career Services.</p>
                         </div>
-                        <a class="button" href="contact_career_services.php" data-role="button" data-icon="action" data-mini="false">Contact Us</a>
+                        <a class="button" href="contact_career_services.php" data-role="button" data-icon="action" data-mini="false">Contact Us Today</a>
                     </div>
-                    <div class="option">
-                        <div class="option-text">
-                            <p>Share feedback for our app.</p>
-                        </div>
-                        <a class="button" href="feedback.php" data-role="button" data-icon="action" data-mini="false">Share Feedback</a>
-                    </div>					
                  <div class="option-text"><h2>Get to Know Us Better</h2></div>
-                <!--<iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>-->
-	            <h2><a href="https://www.mccneb.edu/careercenter/" rel="external" data-role="button" data-inline="true" >Visit our Career Center</a></h2>						
+                <iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>
                 </div>
 			
 	</div><!--closing content div-->
 	
-<?php
-include ('includes/footer.php');
-?>   
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="a"><!-- opening footer div-->     
+		 	<p id="footer">| <a href="http://www.mccneb.edu">MCC Home</a> | <a href="http://www.mccneb.edu/careercenter/">MCC Career Services</a> | <br>
+			| <a href="http://www.mccneb.edu/future/">Future MCC Student</a> | <a href="http://www.mccneb.edu/currentstudents/2resourcecenter.asp">Current MCC Students</a> | 
+			<br> Metropolitan Community College<br>Copyright © 2014, All Rights Reserved. 
+			</p>
+	</div><!-- footer closing div -->   
 	
 </div><!-- closing page div -->
 </body><!-- closing body div -->
