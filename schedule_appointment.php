@@ -90,7 +90,7 @@ session_start();
 						</div>
 						<div class="ui-field-contain" id="status">	
 							<fieldset data-role="controlgroup"> 
-								<legend>Please Selelct One</legend> 											
+								<legend>Please Select One</legend> 											
 									<label for="radio_current">I am a <b>CURRENT</b> student.</label> 	 
 									<input type="radio" name="mcc_status" id="radio_current" value="a current MCC student." required>	
 									<label for="radio_alumni">I am an <b>ALUMNI</b> of MCC.</label> 			

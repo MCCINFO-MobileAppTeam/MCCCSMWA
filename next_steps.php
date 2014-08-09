@@ -31,13 +31,13 @@ require_once 'includes/page_start.php';
                         <div class="option-text">
                             <p>Send my Assessment results to me.</p>
                         </div>
-                        <a class="button" href="email_results.php" data-role="button" data-icon="mail" data-mini="false">Email my Assessment</a>
+                        <a class="button" rel="external" href="email_results.php" data-role="button" data-icon="mail" data-mini="false">Email my Assessment</a>
                     </div>
                     <div class="option">
                         <div class="option-text">
                             <p>Talk with a Career Navigator.</p>
                         </div>
-                        <a class="button" href="schedule_appointment.php" data-role="button" data-icon="mail" data-mini="false">Schedule Appointment</a>
+                        <a class="button" rel="external" href="schedule_appointment.php" data-role="button" data-icon="mail" data-mini="false">Schedule Appointment</a>
                     </div>
                     <div class="option">
                         <div class="option-text">
