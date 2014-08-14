@@ -24,7 +24,6 @@ require_once 'includes/page_start.php';
 	</div><!--header closing div-->
 	
 	<div data-role="content"><!-- opening content div-->
-    
             <h3>You're On Your Way!</h3>
                 <div class="options">
                     <div class="option">
@@ -37,7 +36,7 @@ require_once 'includes/page_start.php';
                         <div class="option-text">
                             <p>Talk with a Career Navigator.</p>
                         </div>
-                        <a class="button" rel="external" href="schedule_appointment.php" data-role="button" data-icon="mail" data-mini="false">Schedule Appointment</a>
+                        <a class="button" rel="external" href="schedule_appointment.php" data-role="button" data-icon="calendar" data-mini="false">Schedule Appointment</a>
                     </div>
                     <div class="option">
                         <div class="option-text">
@@ -49,13 +48,13 @@ require_once 'includes/page_start.php';
                         <div class="option-text">
                             <p>Share feedback for our app.</p>
                         </div>
-                        <a class="button" href="feedback.php" data-role="button" data-icon="action" data-mini="false">Share Feedback</a>
+                        <a class="button" href="feedback.php" data-role="button" data-icon="check" data-mini="false">Share Feedback</a>
                     </div>					
                  <div class="option-text"><h2>Get to Know Us Better</h2></div>
-                <!--<iframe id="ensembleEmbeddedContent_U_UBIWEJC0mTVVP6gAaF1Q" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=U_UBIWEJC0mTVVP6gAaF1Q&displayTitle=false&startTime=0&autoPlay=false&hideControls=false&showCaptions=false&width=240&height=180&displaySharing=false" frameborder="0" style="width:240px;height:236px;" height="236" width="240" allowfullscreen></iframe>-->
-	            <h2><a href="https://www.mccneb.edu/careercenter/" rel="external" data-role="button" data-inline="true" >Visit our Career Center</a></h2>						
-                </div>
-			
+                <h4>Application Overview Video</h4>
+                <iframe id="ensembleEmbeddedContent_-ysFDbJJKUKbIrWv-gOBNQ" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=-ysFDbJJKUKbIrWv-gOBNQ&displayTitle=false&startTime=0&autoPlay=false&hideControls=true&showCaptions=false&width=240&height=161&displaySharing=true" frameborder="0" style="width:240px;height:223px;" height="223" width="240" allowfullscreen></iframe>
+				<h2><a href="https://www.mccneb.edu/careercenter/" rel="external" data-role="button" data-inline="true" >Visit our Career Center</a></h2>						
+				</div>
 	</div><!--closing content div-->
 	
 <?php

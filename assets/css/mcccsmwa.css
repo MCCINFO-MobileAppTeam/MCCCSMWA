@@ -4,7 +4,7 @@
      mcccsmwa.css
 	 MCC Career Services Mobile Web App StyleSheet
      Version 1.0
-	 Revision Date: 06.03.14
+	 Revision Date: 08.13.14
 */
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
@@ -51,6 +51,7 @@ body {
 /* .logoimage {
 	box-shadow: .5px .5px .5px #00adef;
 } */
+
 #borderh {
 	border:2px solid black;
 }
@@ -134,13 +135,19 @@ a:hover, a:active, a:focus {
 	background-color: #1675a1;
 	position: relative;
 	clear: both; 
-	text-align:center;
+	text-align: center;
 	color:#ffffff;
 	font-size: 0.8125em; /* 1 */
 	-webkit-text-size-adjust: 0.8125em; /* 2 */
     -ms-text-size-adjust: 0.8125em; /* 2 */
 } 
 
+#feedback { float: right;
+			padding-top: 16px;
+}
+
+.apptradio { padding-bottom: 18px;
+}
 .question-button {
 	border-radius: 0.6em;
 	color: #F7FE2E;
