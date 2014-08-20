@@ -1,9 +1,9 @@
 <?php
 $settings = array(
-    'database' => 'repaschall_12FA_2439',
+    'database' => 'e2v',
     'host'     => 'localhost',
-    'password' => 'skp88jcp',
-    'username' => 'repaschall'
+    'password' => 'jcp88skp',
+    'username' => 'spaschall'
 );
 $dsn = 'mysql:host=' . $settings['host'] . ';dbname=' . $settings['database'];
 
@@ -17,7 +17,7 @@ $pdo = new PDO(
 catch(PDOException $e)
 {
 /* Redirect browser to the home page of the app*/
-	header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology_no_db_log.php");
+	header("Location: http://e2v.mccinfo.net/error_apology_no_db_log.php");
  /* Make sure that code below does not get executed when we redirect. */
 	exit;	
 }
