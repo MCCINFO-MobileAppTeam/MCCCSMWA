@@ -28,7 +28,7 @@ require_once 'includes/functions.php';
 	            <h2>Contact Us</h2><p>We are here for you!</p>
                 <div class="options">
                     <div class="option">
-						<a href="tel:4022506143" class="mobile_tel" data-role="button" data-icon="phone">Call (402) 738-4647</a>
+						<a href="tel:4027384647" class="mobile_tel" data-role="button" data-icon="phone">Call (402) 738-4647</a>
                     </div>
                     <div class="option">
 						<a href="career_services_locations.php" data-role="button" data-icon="location" rel="external">Our Locations</a>

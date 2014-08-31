@@ -37,7 +37,7 @@ require_once 'includes/page_start.php';
 					</p>
 					<br>
                 <h2>Get to Know Us Better</h2>
-				<h4>Application Overview Video</h4>
+				<<!--<h4>Application Overview Video</h4>-->
                 <iframe id="ensembleEmbeddedContent_-ysFDbJJKUKbIrWv-gOBNQ" src="https://mccneb.ensemblevideo.com/app/plugin/embed.aspx?ID=-ysFDbJJKUKbIrWv-gOBNQ&displayTitle=false&startTime=0&autoPlay=false&hideControls=true&showCaptions=false&width=240&height=161&displaySharing=true" frameborder="0" style="width:240px;height:223px;" height="223" width="240" allowfullscreen></iframe>
 				<h2><a href="https://www.mccneb.edu/careercenter/" rel="external" data-role="button" data-inline="true" >Visit our Career Center</a></h2>			
 	</div><!--closing content div-->

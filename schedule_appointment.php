@@ -86,7 +86,7 @@ session_start();
 							<p>Welcome to MCC! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
 						</div>
 						<div data-role="popup" id="never" class="ui-content">
-							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Nebraska Department of Labor Omaha Career Center at <a href="tel:4025953000">402-595-3000</a> for additional assistance.</p>
+							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Nebraska Department of Labor Omaha Career Center at <a href="tel:4024737019">402-473-7019</a> for additional assistance.</p>
 						</div>
 						<div class="ui-field-contain" id="status">	
 							<fieldset data-role="controlgroup"> 
