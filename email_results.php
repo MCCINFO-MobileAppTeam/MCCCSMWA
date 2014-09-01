@@ -119,7 +119,7 @@ require_once 'includes/functions.php';
 			  <td> Our Career Navigators are able to assist current MCC students and alumni with the next steps of career exploration and planning.  If you are <b>not</b> a current student or alumni, we encourage you to contact Heartland Workforce Development for assistance with career exploration and job search.</td>
 			</tr>  
 			<tr>
-			  <td><a href="http://www.hws-ne.org/for-workers/career-center/">Heartland Workforce Development</a><br><p>Call: 402-738-4060</p></td>
+			  <td><a href="http://www.hws-ne.org/for-workers/career-center/">Heartland Workforce Development</a><br><p>Call: 402-473-7019</p></td>
 			<tr>
 			  <td>&nbsp;</td>
 			</tr>  
@@ -161,8 +161,8 @@ require_once 'includes/functions.php';
 			<a href="https://www.mccneb.edu/future/get_content.asp?url=/careercenter/career_cluster/">Explore all MCC Majors</a> 
 		  
 		  <br><br><b>Contact MCC Career Services</b><br>
-		  Call:  (402) 250-6143<br>
-		  Email:  mcccsmwa@gmail.com<br>
+		  Call:  (402) 738-4647<br>
+		  Email:  careerservices@mccneb.edu<br>
 		  <a href="https://www.mccneb.edu/careercenter/">Career Services full site</a><br>   
 		  <a href="http://infolnx7.mccinfo.net/~repaschall/mcccsmwa_skip/">Career Services mobile app</a>     
 

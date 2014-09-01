@@ -86,7 +86,7 @@ session_start();
 							<p>Welcome to MCC! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
 						</div>
 						<div data-role="popup" id="never" class="ui-content">
-							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Nebraska Department of Labor Omaha Career Center at <a href="tel:4024737019">402-473-7019</a> for additional assistance.</p>
+							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Heartland Workforce Development Office at <a href="tel:4024737019">402-473-7019</a> for additional assistance.</p>
 						</div>
 						<div class="ui-field-contain" id="status">	
 							<fieldset data-role="controlgroup"> 
@@ -283,8 +283,8 @@ session_start();
 				"Preferred Meeting Location: " . $location . "\n\n" .	
 				"Please do not reply to this message directly.\n\n";
 			$subject_user = 'Your MCC Career Services Appointment Request';
-			/* $email_user = $email;  */
-			$email_user = "mcccsmwa@gmail.com";  
+			$email_user = $email;  
+			/* $email_user = "mcccsmwa@gmail.com"; */ 
 			mail($email_user, $subject_user, $message_user, $fromEmail);
 			
 			$status = 'requested';
