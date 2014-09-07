@@ -1,0 +1,92 @@
+/*-----ID's-----*/
+#appointments{
+	float:left;
+	width:100%;
+	position:relative;
+}
+#box{
+	visibility:hidden;
+	background-color:white;
+	position:fixed;
+	right:25%;
+	top:15%;
+	margin:auto;
+	
+}
+#container{
+	width:80%;
+	max-width:800px;
+	margin:auto;
+}
+#comments{
+	height:75px;
+	width:670px;
+	border:solid think black;
+}
+#form{
+position:absolute;
+margin:auto;
+}
+#menu{
+	float:right;
+	text-align:right;
+	margin:20px;
+	width:270px;
+	border-right:solid thin black;
+	border-radius:10px;
+	padding-right:20px;
+	z-index:1;
+}
+#name{
+	padding:0 20px 2px 20px;
+	border-top:solid thin black;
+	border-top-left-radius:15px;
+	border-top-right-radius:15px;
+	border-left:solid thin black;
+	border-right:solid thin black;
+}
+#TableID{
+	visibility:hidden;
+	position:absolute;
+	left:-10px;
+	width:0px;
+}
+#thead{
+	background-color: lightgray;
+}
+#update{
+}
+table{
+	border:solid thin black;
+}
+td {
+	text-align:left;
+	padding:5px;
+	padding-right:25px;
+}
+th{
+	border-right:solid thin black;
+	border-bottom:solid thin black;
+}
+
+/*---Classes----*/
+.nav-button{
+	text-decoration:none;
+	padding:.5px 20px .5px 10px;
+	margin-right:-20px;
+	border-left:solid thin black;
+	border-top:solid thin black;
+	border-bottom: solid thin black;
+	border-radius:10px;
+	background-color:#66FFFF;
+	z-index:-1000;
+}
+.nav-button:hover{
+	background-color:#66CCFF;
+}
+.capitalize{
+	text-transform: uppercase;
+}
+.hidden{
+	visibility:hidden;
+}

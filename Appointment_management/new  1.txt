@@ -1,0 +1,50 @@
+appt_request_id,
+first_name, 
+last_name, 
+email_addr, 
+type_1, 
+type_2, 
+type_3, 
+mcc_status, 
+contact_method, 
+phone, 
+mtg_days, 
+mtg_time, 
+mtg_location, 
+status, 
+last_mod_dt
+
+
+
+
+$(document).ready(function() 
+    { 
+				//initialize table sorting
+        $("#appointments").tablesorter();
+				
+				//build click function on list items,
+				$(".select").click(function(){
+					//collect variables from selected
+					var name=$(this).children()[0],
+							date=$(this).children()[1],
+							location=$(this).children()[2],
+							status=$(this).children()[3];
+					
+					//populate update box
+					$("#status").val($(status).text());
+					$("#name").val($(name).text());
+					$("#name").attr('readonly', 'readonly');
+					$("#date").val($(date).text());
+					$("#location").val($(location).text());
+					
+					
+					//show update box
+					$("#box").css("visibility", "visible");
+					
+				});
+    } 
+); 
+function hideBox(){
+	//Hide update box
+	$("#box").css("visibility", "hidden");
+}
