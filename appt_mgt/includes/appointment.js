@@ -18,12 +18,12 @@ $(document).ready(function()
 					$("#TableID").val(list[select][0]);
 					$("#name").html(list[select][2] + ", " + list[select][1]);
 					$("#status").val(list[select][13]);
-					$("#lastmod").html(list[select][14]);
-					$("#email").html(list[select][3]);
-					$("#phone").html(list[select][9]);
-					$("#contact").html(list[select][8]);
-					$("#days").html(list[select][10]);
-					$("#time").html(list[select][11]);
+					$("#lastmod").val(list[select][14]);
+					$("#email").val(list[select][3]);
+					$("#phone").val(list[select][9]);
+					$("#contact").val(list[select][8]);
+					$("#days").val(list[select][10]);
+					$("#time").val(list[select][11]);
 					$("#location").val(list[select][12]);
 					$("#type1").html(list[select][4]);
 					$("#type2").html(list[select][5]);

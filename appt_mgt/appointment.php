@@ -30,7 +30,7 @@
 <body>
 	<div id="container">
 		<div id="menu">
-			<a class="nav-button" href="#">Add User</a>
+			<a class="nav-button" href="add_user.php">Add User</a>
 			<a class="nav-button" href="#">Calendar</a>
 			<a class="nav-button" href="#">List</a>
 			<a class="nav-button" href="logout.php">Logout</a>
@@ -122,24 +122,29 @@
 								<option value="Canceled">Canceled</option>
 							</select>
 						</td>
-						<td>Last mod date:</td><td><a id="lastmod"></a></td>
+						<td>Last mod date:</td><td><input type="text" name="lastmod" id="lastmod"></td>
 					</tr>
 					<tr>
 						<td>Contact Method:</td>
 						<td>
-							<a id="contact"></a>
+							<input type="text" name="contact" id="contact">
 						</td>
 						<td>Available Times:</td>
 						<td>
-							<a id="time"></a>
+							<select type="text" name="time" id="time">
+								<option value="Any Time">Any time</option>
+								<option value="Morning">Morning</option>
+								<option value="Afternoon">Afternoon</option>
+								<option value="evening">Evening</option>
+							</select>
 						</td>
 					</tr>
 					<tr>
-						<td>Days Available:</td><td colspan="3"><a id="days"></a></td>
+						<td>Days Available:</td><td colspan="3"><input type="text" name="days" id="days"></td>
 					</tr>
 					<tr>
-						<td>Email:</td><td><a id="email"></a></td>
-						<td>Phone:</td><td><a id="phone"></a></td>
+						<td>Email:</td><td><input type="text" name="email" id="email"></td>
+						<td>Phone:</td><td><input type="text" name="phone" id="phone"></td>
 					</tr>
 					
 					

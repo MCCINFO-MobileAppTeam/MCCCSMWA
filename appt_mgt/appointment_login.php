@@ -18,6 +18,7 @@
 		}
 		
 		if($errors == "") {
+		    //echo "before require";
 			require('includes/mysqli_connect.php');//connect to DB
 			$uname = mysqli_real_escape_string($dbc, trim($uname));
 			$pass = mysqli_real_escape_string($dbc, trim($pass));
