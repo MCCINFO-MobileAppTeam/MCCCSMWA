@@ -24,7 +24,7 @@ function personalityTypeDescription($hollandCode)
 	if ($hollandCode === 'r') {
 		$personTypeDescription = 'Realistic people have athletic ability; prefer to work with objects, machines, tools, plants or animals; or enjoy being outdoors.';
 	} elseif ($hollandCode === 'a') {
-		$personTypeDescription = 'Artistic people have artistic, innovating, or intuitional abilities and like to work in unstructured situations using their imagination and creativity.';
+		$personTypeDescription = 'Artistic people have artistic, innovating, or intuition abilities and like to work in unstructured situations using their imagination and creativity.';
 	} elseif ($hollandCode === 's') {
 		$personTypeDescription = 'Social people like to work with people to enlighten, inform, help, train, or cure them; or they are skilled with words.';	
 	} elseif ($hollandCode === 'c') {

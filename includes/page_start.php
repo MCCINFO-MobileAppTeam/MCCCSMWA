@@ -2,6 +2,10 @@
 require_once 'includes/pdo.php';
 require_once 'includes/functions.php';
 
+echo "<script>
+		$('#feedbox').css({display:\"none\"});
+	  </script>";
+
 session_start();
 if (!isset($_SESSION['visit_num'])) {
 	writeLogMessage($pdo,0,'visit_num not in session');

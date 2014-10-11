@@ -38,14 +38,14 @@ session_start();
             $("#prospective").popup('open');
 		  }else if( this.id === 'radio_never' ){
             $("#never").popup('open');
-			$('#f_name').hide(); 
+			/*$('#f_name').hide(); 
 			  $('#l_name').hide();
 		      $('#con_method').hide();
 			  $('#email').hide(); 
-			  $('#phone').hide();
+			  $('#phone').hide();*/
 		      $('#time').hide();
 			  $('#days').hide();
-			  $('#submit_btn').hide();
+			  //$('#submit_btn').hide();
 			  $('#campus').hide();
 			  $('#heading').hide();
 		  }
@@ -76,29 +76,29 @@ session_start();
 						<!--<div class="form-field"> old wrapper class="form-field"-->
 												
 						<!--popups for MCC Status-->
+						<div data-role="popup" id="prospective" class="ui-content">
+							<p>Welcome to MCC! A Career Navigator looks forward to working with you.  Please complete this Request an Appointment form.</p>
+						</div>						
 						<div data-role="popup" id="current" class="ui-content">
-							<p>Great! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
+							<p>Great! A Career Navigator looks forward to working with you.  Please complete this Request an Appointment form.</p>
 						</div>
 						<div data-role="popup" id="alumni" class="ui-content">
-							<p>Welcome Back! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
-						</div>
-						<div data-role="popup" id="prospective" class="ui-content">
-							<p>Welcome to MCC! A Career Navigator looks forward to working with you.  Please complete the Request for an Appointment form.</p>
+							<p>Welcome Back! A Career Navigator looks forward to working with you.  Please complete this Request an Appointment form.</p>
 						</div>
 						<div data-role="popup" id="never" class="ui-content">
-							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective, current, and alumni students. Please feel free to contact our partner the Heartland Workforce Development Office at <a href="tel:4024737019">402-473-7019</a> for additional assistance.</p>
+							<p>We appreciate your interest in exploring new career opportunities.  MCC Career Navigators work with prospective students, current students, and alumni. Please contact our partner the Nebraska Department of Labor at <a href="tel:4024737019">402-473-7019</a> or send an email to brittany.urias@nebraska.gov in the NEworks office for additional information.</p>
 						</div>
 						<div class="ui-field-contain" id="status">	
 							<fieldset data-role="controlgroup"> 
-								<legend>Please Selelct One</legend> 											
+								<legend>Please Select One</legend> 
+									<label for="radio_prospective" class="apptradio"<a href="http://www.mccneb.edu">I am a <b>PROSPECTIVE</b> student and am interested in MCC.</label> 			
+									<input  type="radio" name="mcc_status" id="radio_prospective" value="a prospective student at MCC.">								
 									<label for="radio_current">I am a <b>CURRENT</b> student.</label> 	 
 									<input type="radio" name="mcc_status" id="radio_current" value="a current MCC student." required>	
 									<label for="radio_alumni">I am an <b>ALUMNI</b> of MCC.</label> 			
 									<input  type="radio" name="mcc_status" id="radio_alumni" value="an MCC alumni.">
-									<label for="radio_prospective" class="apptradio"<a href="http://www.mccneb.edu">I am a <b>PROSPECTIVE</b> student and am interested in MCC.</label> 			
-									<input  type="radio" name="mcc_status" id="radio_prospective" value="a prospective student at MCC.">
 									<label for="radio_never" class="apptradio">I want to learn more about career opportunities.</label> 			
-									<input  type="radio" name="mcc_status" id="radio_never" value="not interested in MCC">
+									<input  type="radio" name="mcc_status" id="radio_never" value="interested in career opportunities.">
 							</fieldset>
 						</div>
 						<!--<div id="hwd_link">
@@ -248,9 +248,25 @@ session_start();
 			$type1 = personalityType($_SESSION['type1']);
 			$type2 = personalityType($_SESSION['type2']);
 			$type3 = personalityType($_SESSION['type3']);
+			
+			if ($mccStatus == "interested in career opportunities.") {
+			
+			$message_admin = $firstName . ' ' . $lastName . " has requested to learn more about career opportunities.\n\n" .
+				"This student is not an alumni, current or prospective student.\n\n" .		
+				"This student has taken the Holland Code Assessment.\n\n" .		
+				"The student has the following top three personality types: \n" .
+				$type1 . "\n" .
+				$type2 . "\n" .
+				$type3 . "\n\n" .
+				"They are " . $mccStatus . "\n" .
+				"Preferred Contact Method: " . $contactMethod . "\n" .
+				"Student Email Address: " . $email . "\n" .
+				"Student Phone Number: " . $phone . "\n" .
+				"Please do not reply to this message directly.\n\n";
+			}else{
 			$message_admin = $firstName . ' ' . $lastName . " has requested to meet with a Career Services Navigator.\n\n" .
 				"This student has taken the Holland Code Assessment.\n\n" .		
-				"The student has the following top three personality types: \n\n" .
+				"The student has the following top three personality types: \n" .
 				$type1 . "\n" .
 				$type2 . "\n" .
 				$type3 . "\n\n" .
@@ -261,16 +277,35 @@ session_start();
 				"Preferred Meeting Days: " . $days . "\n" .
 				"Preferred Meeting Time: " . $time . "\n" . 
 				"Preferred Meeting Location: " . $location . "\n\n" .	
-				"Please do not reply to this message directly.\n\n";
+				"Please do not reply to this message directly.\n\n";			
+            }			
+				
 			$fromEmail = 'CCC@MCC.net';
 			$subject_admin = 'MCC Career Services Appointment Request: ' . $firstName . ' ' . $lastName;
-			$email_admin = "mcccsmwa@gmail.com";  
-			
+			$email_admin = "careerservices@mccneb.edu";  
+			//$email_admin = "skip123paschall@gmail.com";  			
+						
 			mail($email_admin, $subject_admin, $message_admin, $fromEmail);
 						
+			if ($mccStatus == "interested in career opportunities.") {						
+			$message_user = "Thank you " . $firstName . " " . $lastName . " for using the MCC Career Services app.\n\n" .
+				"We appreciate your interest in exploring new career opportunities.\n" .
+				"MCC Career Navigators work with MCC prospective students, current students and alumni.\n" .
+				"Please contact our partner the Heartland Workforce Development Office at 402-473-7019 or\n" .	
+				"send an email to brittany.urias@nebraska.gov in the Heartland Office for additional information.\n\n" .						
+				"These are your top three personality types: \n" .
+				$type1 . "\n" .
+				$type2 . "\n" .
+				$type3 . "\n\n" .
+				"You stated you are " . $mccStatus . "\n" .
+				"Your preferred Contact Method: " . $contactMethod . "\n" .
+				"Your Email Address: " . $email . "\n" .
+				"Your Phone Number: " . $phone . "\n" .
+				"Please do not reply to this message directly.\n\n";
+			}else{
 			$message_user = "Thank you " . $firstName . " " . $lastName . " for requesting to meet with a Career Services Navigator.\n\n" .
 				"If you did not make this request or if any of the following information is incorrect, please contact us.\n\n" .
-				"These are your top three personality types: \n\n" .
+				"These are your top three personality types: \n" .
 				$type1 . "\n" .
 				$type2 . "\n" .
 				$type3 . "\n\n" .
@@ -281,42 +316,64 @@ session_start();
 				"Preferred Meeting Days: " . $days . "\n" .
 				"Preferred Meeting Time: " . $time . "\n" . 
 				"Preferred Meeting Location: " . $location . "\n\n" .	
-				"Please do not reply to this message directly.\n\n";
+				"Please do not reply to this message directly.\n\n";			
+            }			
+				
 			$subject_user = 'Your MCC Career Services Appointment Request';
 			$email_user = $email;  
 			/* $email_user = "mcccsmwa@gmail.com"; */ 
 			mail($email_user, $subject_user, $message_user, $fromEmail);
 			
 			$status = 'requested';
-
-try {				
-			$query = 'INSERT INTO appt_request(visit_num, first_name, last_name, email_addr, type_1, type_2, type_3, mcc_status, contact_method, phone, mtg_days, mtg_time, mtg_location, status) ' .
-				'VALUES(:visit_num, :first_name, :last_name, :email_addr, :type_1, :type_2, :type_3, :mcc_status, :contact_method, :phone, :mtg_days, :mtg_time, :mtg_location, :status)';
-			$statement = $pdo->prepare($query);
-			$statement->bindParam(':visit_num', $_SESSION['visit_num'], PDO::PARAM_STR);
-			$statement->bindParam(':first_name', $firstName, PDO::PARAM_STR);
-			$statement->bindParam(':last_name', $lastName, PDO::PARAM_STR);
-			$statement->bindParam(':email_addr', $email, PDO::PARAM_STR);	
-			$statement->bindParam(':type_1', $type1, PDO::PARAM_STR);	
-			$statement->bindParam(':type_2', $type2, PDO::PARAM_STR);	
-			$statement->bindParam(':type_3', $type3, PDO::PARAM_STR);
-			$statement->bindParam(':mcc_status', $mccStatus, PDO::PARAM_STR);
-			$statement->bindParam(':contact_method', $contactMethod, PDO::PARAM_STR);	
-			$statement->bindParam(':phone', $phone, PDO::PARAM_STR);				
-			$statement->bindParam(':mtg_days', $days, PDO::PARAM_STR);	
-			$statement->bindParam(':mtg_time', $time, PDO::PARAM_STR);
-			$statement->bindParam(':mtg_location', $location, PDO::PARAM_STR);	
-			$statement->bindParam(':status', $status, PDO::PARAM_STR);				
-			$statement->execute();				
-}	
-catch(PDOException $e)
-{
-	writeLogMessage($pdo,$_SESSION['visit_num'], $e->getMessage());	
-	/* Redirect browser to the home page of the app*/
-	//header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
-	/* Make sure that code below does not get executed when we redirect. */
-	//exit;	
-}
+			
+            if ($mccStatus == "a prospective student at MCC.") {
+				$message_admin = $firstName . ' ' . $lastName . " has used the MCC Career Services mobile web app.\n\n" .
+					"This person selected the status of Prospective Student when requesting an appointment with Career Services.\n\n" .				
+					"Preferred contact method: " . $contactMethod . "\n" .
+					"Email address: " . $email . "\n" .
+					"Phone number: " . $phone . "\n\n" .	
+					"This student has taken the Holland Code Assessment.\n" .						
+					"The student has the following top three personality types: \n" .
+					$type1 . "\n" .
+					$type2 . "\n" .
+					$type3 . "\n\n" .
+					"Please do not reply to this message directly.\n\n";
+					
+					$fromEmail = 'CCC@MCC.net';
+					$subject_admin = 'MCC Prospective Student: ' . $firstName . ' ' . $lastName;
+					$email_admin = "outreach@mccneb.edu";  
+					//$email_admin = "skip123paschall@gmail.com.edu";  					
+					mail($email_admin, $subject_admin, $message_admin, $fromEmail);
+			}
+			
+			try {				
+				$query = 'INSERT INTO appt_request(visit_num, first_name, last_name, email_addr, type_1, type_2, type_3, mcc_status, contact_method, phone, mtg_days, mtg_time, mtg_location, status) ' .
+					'VALUES(:visit_num, :first_name, :last_name, :email_addr, :type_1, :type_2, :type_3, :mcc_status, :contact_method, :phone, :mtg_days, :mtg_time, :mtg_location, :status)';
+				$statement = $pdo->prepare($query);
+				$statement->bindParam(':visit_num', $_SESSION['visit_num'], PDO::PARAM_STR);
+				$statement->bindParam(':first_name', $firstName, PDO::PARAM_STR);
+				$statement->bindParam(':last_name', $lastName, PDO::PARAM_STR);
+				$statement->bindParam(':email_addr', $email, PDO::PARAM_STR);	
+				$statement->bindParam(':type_1', $type1, PDO::PARAM_STR);	
+				$statement->bindParam(':type_2', $type2, PDO::PARAM_STR);	
+				$statement->bindParam(':type_3', $type3, PDO::PARAM_STR);
+				$statement->bindParam(':mcc_status', $mccStatus, PDO::PARAM_STR);
+				$statement->bindParam(':contact_method', $contactMethod, PDO::PARAM_STR);	
+				$statement->bindParam(':phone', $phone, PDO::PARAM_STR);				
+				$statement->bindParam(':mtg_days', $days, PDO::PARAM_STR);	
+				$statement->bindParam(':mtg_time', $time, PDO::PARAM_STR);
+				$statement->bindParam(':mtg_location', $location, PDO::PARAM_STR);	
+				$statement->bindParam(':status', $status, PDO::PARAM_STR);				
+				$statement->execute();				
+			}	
+				catch(PDOException $e)
+			{
+				writeLogMessage($pdo,$_SESSION['visit_num'], $e->getMessage());	
+				/* Redirect browser to the home page of the app*/
+				//header("Location: http://infolnx7.mccinfo.net/~repaschall/mcccsmwa/error_apology.php");
+				/* Make sure that code below does not get executed when we redirect. */
+				//exit;	
+			}
 			
 	?>
 			<h3>Thank you for requesting to meet with Career Services.<br>

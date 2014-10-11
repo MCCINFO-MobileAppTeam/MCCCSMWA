@@ -106,6 +106,7 @@ writeLogMessage($pdo,999, 'Just before careers loop');
 						
 
 								 <h3><?php echo personalityType($types[$i]); ?> Personalities Match With These Careers</h3>
+								 <h4>Career information provided by <a href="http://www.onetonline.org/">My Next Move</a></h4>								 
 								 <div class="data">							 
 								 
 	<?php
@@ -135,7 +136,8 @@ writeLogMessage($pdo,999, 'Just before majors loop');
 
 			<div>
 				<!--<h3>Ready For Your Future?</h3>-->
-				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>
+				<a class="button" href="http://www.onetonline.org/explore/interests/" data-role="button" data-inline="true" >More careers</a>
+				<a class="button" href="next_steps.php" data-role="button" data-inline="true" >Next steps</a>				
 			</div>
 					   
 	</div><!--closing content div-->

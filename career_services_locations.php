@@ -31,7 +31,7 @@ require_once 'includes/page_start.php';
 
 		<div data-role="collapsible">
 		<h3>South Omaha Campus</h3>
-		<p>2909 Edward Babe Gomez Ave.<br>Connector Building 148</p>
+		<p>2909 Edward Babe Gomez Ave.<br>Student Services</p>
 		</div>
 
 		<div data-role="collapsible">
@@ -41,12 +41,12 @@ require_once 'includes/page_start.php';
 
 		<div data-role="collapsible">
 		<h3>Fort Omaha Campus</h3>
-		<p>5300 N. 30th St.<br>Building 10</p>
+		<p>5300 N. 30th St.<br>Building 10<br>Student Services</p>
 		</div>
 
 		<div data-role="collapsible">
 		<h3>Elkhorn Valley Campus</h3>
-		<p>N. 204th St. & W. Dodge Rd.<br>Elkhorn, NE</p>
+		<p>N. 204th St. & W. Dodge Rd.<br>Elkhorn, NE<br>Student Services</p>
 		</div>	
 		
 	</div>

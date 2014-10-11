@@ -136,7 +136,8 @@ require_once 'includes/functions.php';
 			"Please do not reply to this message directly.\n\n";
 		$fromEmail = 'CCC@MCC.net';
 		$subject = "Feedback sent from MCC Career Services App: ";
-		$email_to = "mcccsmwa@gmail.com";
+		//$email_to = "skip123paschall@gmail.com";
+		$email_to = "careerservices@mccneb.edu";  		
 		mail($email_to, $subject, $message, $fromEmail);
 		
 try {	

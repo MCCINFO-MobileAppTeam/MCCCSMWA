@@ -116,15 +116,6 @@ require_once 'includes/functions.php';
 			</tr>  	
 		 
 			<tr>
-			  <td> Our Career Navigators are able to assist current MCC students and alumni with the next steps of career exploration and planning.  If you are <b>not</b> a current student or alumni, we encourage you to contact Heartland Workforce Development for assistance with career exploration and job search.</td>
-			</tr>  
-			<tr>
-			  <td><a href="http://www.hws-ne.org/for-workers/career-center/">Heartland Workforce Development</a><br><p>Call: 402-473-7019</p></td>
-			<tr>
-			  <td>&nbsp;</td>
-			</tr>  
-		 
-			<tr>
 			  <td><b>' . $type1 . '</b></td>
 			</tr>
 			
@@ -155,11 +146,22 @@ require_once 'includes/functions.php';
 				<td><a href="'. $type3_html . '">' . $type3 . ' Careers and Majors</a></td>
 			</tr>	
 			
+			<tr>
+			  <td>&nbsp;</td>
+			</tr>  
+			
+			<tr>
+			  <td> Our Career Navigators are able to assist current MCC students and alumni with the next steps of career exploration and planning.  <br> If you are <b>not</b> a current student or alumni, we encourage you to contact Heartland Workforce Development for assistance with career exploration and job search.<a href="https://neworks.nebraska.gov/vosnet/Default.aspx">&nbsp;Heartland Workforce Development</a>&nbsp;Call: 402-473-7019</td>
+			</tr>  
+			
 		</table>
 
-		  <br><b>Learn more about MCC</b><br>
+		  <br><b>Find more career information</b><br>
+			<a href="http://www.onetonline.org/explore/interests/">My Next Move</a> 	
+			
+		  <br><br><b>Learn more about MCC</b><br>
 			<a href="https://www.mccneb.edu/future/get_content.asp?url=/careercenter/career_cluster/">Explore all MCC Majors</a> 
-		  
+
 		  <br><br><b>Contact MCC Career Services</b><br>
 		  Call:  (402) 738-4647<br>
 		  Email:  careerservices@mccneb.edu<br>
